@@ -91,7 +91,7 @@ st.write(
 )
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
-image_path4 = os.path.join(current_dir, "images", "langchain.jpg"")
+image_path4 = os.path.join(current_dir, "images", "langchain.jpg")
 
 # 파일이 있는지 확인하고 이미지를 로드
 if os.path.exists(image_path):
