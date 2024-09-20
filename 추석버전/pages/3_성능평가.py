@@ -45,6 +45,7 @@ from langchain.vectorstores import FAISS
 from langchain.memory import StreamlitChatMessageHistory
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain_openai import ChatOpenAI
+st.markdown("* * *")
 st.subheader("|QnA set")
 
 # Set the current directory and file path
@@ -79,7 +80,7 @@ import streamlit as st
 # # 폰트 설정
 # load_local_font('Pretendard', 'C:\Windows\Fonts\Arial.ttf')
 
-    
+st.markdown("* * *")    
 st.subheader("|내 모델 로드")     
 with st.expander("코드 보기"):
     st.code('''
@@ -348,6 +349,7 @@ print("Context Recall Result:", result_context_recall)
 print("Context Precision Result:", result_context_precision)
         
 ''')
+st.markdown("* * *")
 st.write("참고문헌")
 # Arxiv 요약 페이지 링크 추가
 st.markdown(f'[바로가기]("https://arxiv.org/abs/2309.15217")', unsafe_allow_html=True)
@@ -366,7 +368,7 @@ st.image(image_path4)
 
 
 
-
+st.markdown("* * *")
 st.subheader("|개별점수")
 # Set the current directory and file path
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -381,16 +383,17 @@ if os.path.exists(file_path1):
 
 
 image_path5 = os.path.join(current_dir, "images", "test_final.jpg")
+st.markdown("* * *")
 st.subheader("|종합점수")
 st.image(image_path5)
 
 
-
+st.markdown("* * *")
 st.subheader("|한계점")
 st.write("1. llm(GPT4)으로 qna 셋을 만들어 그라운드 데이터가 정확하지 않다. ")
 st.write("2. 알 수 없는 이유로 null값이 많이 출력되었다.(토큰 수 제한과 관련있어 보임)")
 st.write("3. 유료모델(GPTAPI) 사용으로 테스트에 한계가 있었다.(테스트 한 번에 5-7달러 가량 소모)")
-
+st.markdown("* * *")
 st.subheader("|앞으로의 과제")
 st.write("1. qna 데이터셋을 직접 만들어 오차율을 줄일 것. ")
 st.write("2. null값 줄이기. ")
