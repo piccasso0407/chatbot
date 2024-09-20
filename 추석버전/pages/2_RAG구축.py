@@ -22,8 +22,6 @@ image_path = os.path.join(current_dir, "images", "주차별메뉴.jpg")
 image_path2 = os.path.join(current_dir, "images", "벡터스토어.jpg")
 image_path3 = os.path.join(current_dir, "images", "임베딩.jpg")
 # 파일이 있는지 확인하고 이미지를 로드
-if os.path.exists(image_path):
-    st.image(image_path)
 st.subheader("1. 파일 읽기")
 st.image(image_path)
 # 파일 경로
