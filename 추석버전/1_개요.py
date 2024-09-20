@@ -88,6 +88,7 @@ github_url = "https://raw.githubusercontent.com/piccasso0407/chatbot/추석버�
 
 # CSS 파일 적용
 
+current_subheader = "|Techstack"
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(current_dir, "images", "techstack.jpg")
