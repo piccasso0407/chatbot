@@ -12,6 +12,7 @@ import streamlit as st
 import numpy as np
 from langchain.embeddings import HuggingFaceEmbeddings
 from sklearn.metrics.pairwise import cosine_similarity
+import os
 
 # 페이지 로드
 
