@@ -84,12 +84,6 @@ from form import form_page
 # # 폰트 설정
 # load_local_font('Pretendard', 'C:\Windows\Fonts\Arial.ttf')
 
-file_path = os.path.join(current_dir, 'qnaset1.xlsx')
-if os.path.exists(file_path):
-    qa_data = pd.read_excel(file_path)
-    st.dataframe(qa_data)
-else:
-    st.error(f"엑셀 파일을 찾을 수 없습니다: {file_path}")
     
 st.subheader("내 모델 로드")     
 with st.expander("코드 보기"):
