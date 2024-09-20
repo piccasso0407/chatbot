@@ -13,8 +13,8 @@ import os
 import time
 from langchain.prompts import ChatPromptTemplate
 from funcs import load_css, load_local_font
-# 페이지 로드
 
+st.code('''
 # load_css('style.css')
 # # 폰트 설정
 # # Streamlit 앱의 제목
@@ -281,3 +281,4 @@ if st.button('캐시 지우기'):
     st.cache_data.clear()
     st.cache_resource.clear()
     st.success("캐시가 지워졌습니다!")
+''')
