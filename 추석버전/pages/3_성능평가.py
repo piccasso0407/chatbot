@@ -46,7 +46,8 @@ from langchain.memory import StreamlitChatMessageHistory
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain_openai import ChatOpenAI
 st.subheader("QnA set")
-qa_data = pd.read_excel('qnaset1.xlsx')
+current_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(current_dir, 'qnaset1.xlsx')
 st.dataframe(qa_data)
 
 import PyPDF2
@@ -69,10 +70,11 @@ from funcs import load_css, load_local_font
 # 페이지 로드
 from info import info_page 
 from form import form_page
-# 외부 CSS 불러오기
-load_css('./style.css')
-# 폰트 설정
-load_local_font('Pretendard', 'C:\Windows\Fonts\Arial.ttf')
+# # 외부 CSS 불러오기
+# load_css('./style.css')
+# # 폰트 설정
+# load_local_font('Pretendard', 'C:\Windows\Fonts\Arial.ttf')
+
 
 st.subheader("내 모델 로드")     
 with st.expander("코드 보기"):
