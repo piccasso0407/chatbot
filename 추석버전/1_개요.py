@@ -77,7 +77,7 @@ def linesero():
         """
         <div style="border-right: 3px solid #D4BDAC; height: flex;"></div>
         """,
-        unsafe_allow_html=True
+        unsafe_allow_html=True)
 # funcs.py
 from funcs import load_css, load_local_font
 # 페이지 로드
