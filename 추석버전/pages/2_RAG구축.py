@@ -118,7 +118,6 @@ st.markdown("""
     [ChromaDB vs FAISS 비교](https://medium.com/@sujathamudadla1213/chromadb-vsfaiss-65cdae3012ab)
 """)
 # 벡터 스토어 생성 함수
-st.code('''
 @st.cache_resource
 def get_vectorstore(_text_chunks, selected_model):
     embeddings = HuggingFaceEmbeddings(
@@ -128,7 +127,7 @@ def get_vectorstore(_text_chunks, selected_model):
     )
     vectordb = FAISS.from_documents(_text_chunks, embeddings)
     return vectordb
-
+st.code('''
 def get_vectorstore(_text_chunks, selected_model):
     embeddings = HuggingFaceEmbeddings(
         model_name=selected_model,
