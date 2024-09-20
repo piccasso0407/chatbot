@@ -27,6 +27,18 @@ def load_css(file_name):
 # CSS 파일 로드
 load_css(css_path)
 
+# Pretendard 폰트 로드
+st.markdown("""
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <style>
+        html, body, [class*="css"] {
+            font-family: 'Pretendard', sans-serif;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
+st.write("Pretendard 폰트가 적용된 텍스트입니다.")
+
 st.code('''
 # PDF 파일 읽기 함수
 def read_pdf(file_path):
