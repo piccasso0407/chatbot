@@ -113,7 +113,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 col1, col2= st.columns(2)
-current_dir = os.path.dirname(os.path.abspath(__file__))
+
 image_path2 = os.path.join(current_dir, "images", "올라마.jpg")
 image_path3 = os.path.join(current_dir, "images", "lmstudio.jpg")
 
