@@ -365,18 +365,28 @@ st.image(image_path4)
 
 
 
-df = pd.read_csv('test_result.csv')
 
 
+st.subheader("개별점수")
+# Set the current directory and file path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+file_path1 = os.path.join(current_dir, 'test_result.csv')
 
+# Check if the file exists
+if os.path.exists(file_path1):
+
+    final_data = pd.read_csv(file_path1)
+    # Display the DataFrame
+    st.dataframe(final_data)
 
 
 # 데이터프레임을 스트림릿 화면에 출력
 st.subheader("개별점수")
 st.dataframe(df)
 
+image_path5 = os.path.join(current_dir, "images", "test_final.jpg")
 st.subheader("종합점수")
-st.image("images/test_final.jpg")
+st.image(image_path5)
 
 
 
