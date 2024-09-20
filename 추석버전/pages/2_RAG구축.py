@@ -145,14 +145,6 @@ st.markdown(
     """,
     unsafe_allow_html=True)
 # 사용자가 선택할 임베딩 모델 옵션
-st.code('''
-    embedding_options = [
-    "jhgan/ko-sroberta-multitask",
-    "sentence-transformers/all-MiniLM-L6-v2",
-    "BAAI/bge-small-en"
-]
-selected_model = st.selectbox("임베딩 모델을 선택하세요:", embedding_options)
-
 
 # 텍스트 청크 생성 및 벡터스토어 생성
 if documents:
@@ -162,7 +154,7 @@ if documents:
 
 # 벡터 검색 함수
 def get_word_vector(query, selected_model):
-    embeddings = HuggingFaceEmbeddings(model_name=selected_model)
+    embeddings = HuggingFaceEmbeddings(model_name="jhgan/ko-sroberta-multitask")
     query_embedding = embeddings.embed_query(query)
     return query_embedding
 
@@ -201,7 +193,7 @@ if query1 and query2:
     
     # 결과 출력
     st.write(f"'{query1}'와 '{query2}' 간의 코사인 유사도: {cosine_sim:.4f}")
-''')
+
 
 st.subheader("5. 대화형 체인")
 
