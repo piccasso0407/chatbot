@@ -90,7 +90,12 @@ st.write(
     답변의 부정확성이나 환각(hallucination)을 줄일 수 있습니다.'''
 )
 
-st.image("pages/images/langchain.jpg", caption="RAG system 흐름도.", use_column_width=True)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+image_path4 = os.path.join(current_dir, "images", "langchain.jpg"")
+
+# 파일이 있는지 확인하고 이미지를 로드
+if os.path.exists(image_path):
+    st.image(image_path4, caption="RAG system 흐름도.", use_column_width=True)
 
 st.write(
     '''
