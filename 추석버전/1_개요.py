@@ -42,7 +42,7 @@ from funcs import load_css, load_local_font
 
 # 페이지 설정
 # GitHub에서 CSS 파일 불러오기
-github_url = "https://raw.githubusercontent.com/piccasso0407/chatbot/style.css"  # 실제 URL로 변경
+github_url = "https://raw.githubusercontent.com/piccasso0407/chatbot/main/style.css"  # 실제 URL로 변경
 
 # CSS 파일 적용
 def load_css(url):
