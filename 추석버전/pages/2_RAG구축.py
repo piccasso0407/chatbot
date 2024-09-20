@@ -119,12 +119,9 @@ st.markdown("""
 """)
 
 
-embedding_options = [
-    "jhgan/ko-sroberta-multitask",
-    "sentence-transformers/all-MiniLM-L6-v2",
-    "BAAI/bge-small-en"
-]
-selected_model = st.selectbox("임베딩 모델을 선택하세요:", embedding_options)
+
+
+selected_model = "jhgan/ko-sroberta-multitask"
 
 
 # 벡터 스토어 생성 함수
