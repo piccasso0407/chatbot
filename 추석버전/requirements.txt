@@ -36,3 +36,4 @@ unstructured
 
 plotly
 fpdf
+scikit-learn
