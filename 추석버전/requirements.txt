@@ -41,3 +41,8 @@ transformers
 sentence-transformers
 torch
 accelerate
+tiktoken
+loguru
+transformers
+langchain 
+openai
