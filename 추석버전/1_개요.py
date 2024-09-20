@@ -40,6 +40,9 @@ import pandas as pd
 import streamlit as st
 import base64
 import numpy as np
+
+from funcs import load_css, load_local_font
+# 페이지 로드
 # css
 def load_css(file_name):
     with open(file_name ,encoding='utf-8') as f:
@@ -79,9 +82,6 @@ def linesero():
         """,
         unsafe_allow_html=True)
 # funcs.py
-from funcs import load_css, load_local_font
-# 페이지 로드
-
 # 페이지 설정
 # GitHub에서 CSS 파일 불러오기
 github_url = "https://raw.githubusercontent.com/piccasso0407/chatbot/추석버전/1_개요.py/style.css"  # 실제 URL로 변경
