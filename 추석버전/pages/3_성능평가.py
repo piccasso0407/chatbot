@@ -73,11 +73,7 @@ import time
 from langchain.prompts import ChatPromptTemplate
 import pandas as pd
 import streamlit as st
-# funcs.py
-from funcs import load_css, load_local_font
-# 페이지 로드
-from info import info_page 
-from form import form_page
+
 # # 외부 CSS 불러오기
 # load_css('./style.css')
 # # 폰트 설정
