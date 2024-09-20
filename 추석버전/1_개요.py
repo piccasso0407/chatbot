@@ -42,33 +42,19 @@ import base64
 import numpy as np
 
 from funcs import load_css, load_local_font
-# 페이지 로드
-# css
-def load_css(file_name):
-    with open(file_name ,encoding='utf-8') as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-# 폰트
-def font_to_base64(font_path):
-    with open(font_path, "rb") as font_file:
-        encoded = base64.b64encode(font_file.read()).decode('utf-8')
-    return encoded
+current_dir = os.path.dirname(os.path.abspath(__file__))
+css_path = os.path.join(current_dir, 'style.css')
 
-# base64로 인코딩된 폰트를 HTML로 삽입
-def load_local_font(font_name, font_path):
-    font_data = font_to_base64(font_path)
-    font_css = f"""
-    <style>
-    @font-face {{
-        font-family: '{font_name}';
-        src: url(data:font/ttf;base64,{font_data}) format('truetype');
-    }}
-    html, body, [class*="css"]  {{
-        font-family: '{font_name}', sans-serif;
-    }}
-    </style>
-    """
-    st.markdown(font_css, unsafe_allow_html=True)
-load_css('./style.css')
+# CSS 파일 로드 함수
+def load_css(file_name):
+    if os.path.exists(file_name):
+        with open(file_name, 'r', encoding='utf-8') as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    else:
+        st.error(f"CSS 파일을 찾을 수 없습니다: {file_name}")
+
+# CSS 파일 로드
+load_css(css_path)
 st.markdown("* * *")
 
 # 기술 스택 표시
