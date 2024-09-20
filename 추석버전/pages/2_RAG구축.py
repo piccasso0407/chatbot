@@ -118,6 +118,7 @@ st.markdown("""
     [ChromaDB vs FAISS 비교](https://medium.com/@sujathamudadla1213/chromadb-vsfaiss-65cdae3012ab)
 """)
 # 벡터 스토어 생성 함수
+st.code('''
 @st.cache_resource
 def get_vectorstore(_text_chunks, selected_model):
     embeddings = HuggingFaceEmbeddings(
@@ -127,7 +128,7 @@ def get_vectorstore(_text_chunks, selected_model):
     )
     vectordb = FAISS.from_documents(_text_chunks, embeddings)
     return vectordb
-st.code('''
+
 def get_vectorstore(_text_chunks, selected_model):
     embeddings = HuggingFaceEmbeddings(
         model_name=selected_model,
@@ -145,7 +146,8 @@ st.markdown(
     """,
     unsafe_allow_html=True)
 # 사용자가 선택할 임베딩 모델 옵션
-embedding_options = [
+st.code('''
+    embedding_options = [
     "jhgan/ko-sroberta-multitask",
     "sentence-transformers/all-MiniLM-L6-v2",
     "BAAI/bge-small-en"
@@ -200,6 +202,7 @@ if query1 and query2:
     
     # 결과 출력
     st.write(f"'{query1}'와 '{query2}' 간의 코사인 유사도: {cosine_sim:.4f}")
+''')
 
 st.subheader("5. 대화형 체인")
 
