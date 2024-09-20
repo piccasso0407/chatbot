@@ -55,7 +55,6 @@ load_css(github_url)
 
 st.markdown("* * *")
 
-# 기술 스택 표시
 st.markdown(
     """
     <h3 style='font-size: 30px; font-family: Pretendard;'>|tech stack</h3>
@@ -63,7 +62,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.image("images/techstack.jpg")
+st.image("pages/images/techstack.jpg")
 
 
 st.markdown("* * *")
@@ -86,7 +85,7 @@ st.write(
     답변의 부정확성이나 환각(hallucination)을 줄일 수 있습니다.'''
 )
 
-st.image("images/langchain.jpg", caption="RAG system 흐름도.", use_column_width=True)
+st.image("pages/images/langchain.jpg", caption="RAG system 흐름도.", use_column_width=True)
 
 st.write(
     '''
@@ -111,10 +110,10 @@ st.markdown(
 col1, col2= st.columns(2)
 
 with col1:
-    st.image("images/올라마.jpg", caption="올라마", use_column_width=True)
+    st.image("pages/images/올라마.jpg", caption="올라마", use_column_width=True)
     st.markdown("[올라마 바로가기](https://ollama.com/)")
 with col2:
-    st.image("images/lmstudio.jpg",  caption="lmstudio.", use_column_width=True)
+    st.image("pages/images/lmstudio.jpg",  caption="lmstudio.", use_column_width=True)
     st.markdown("[lmsutdio 바로가기](https://lmstudio.ai/)")
 
 st.markdown("* * *")
@@ -129,10 +128,10 @@ st.write('teddylee777/EEVE-Korean-Instruct-10.8B-v1.0-gguf를 내려받았습니
 col1, col2 = st.columns(2)
 
 with col1:
-    st.image("images/ollamalist.jpg", use_column_width=True)
+    st.image("pages/images/ollamalist.jpg", use_column_width=True)
 
 with col2:
-    st.image("images/lmstudiolistbic.jpg", use_column_width=True)
+    st.image("pages/images/lmstudiolistbic.jpg", use_column_width=True)
 
 
 # 탭 2: 전처리 (파일 읽기 추가)
