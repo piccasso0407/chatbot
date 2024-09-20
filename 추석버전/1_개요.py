@@ -1,7 +1,6 @@
 import streamlit as st
 from PyPDF2 import PdfReader
 import docx
-import streamlit as st
 import tiktoken
 from loguru import logger
 import time
@@ -9,37 +8,25 @@ import concurrent.futures
 import pandas as pd
 import json
 import os
+import numpy as np
+from PIL import Image
+import plotly.graph_objects as go
+import plotly.express as px
+import joblib
+import pickle
+from fpdf import FPDF
+from io import BytesIO
+import base64
 
 from langchain.chains import ConversationalRetrievalChain
 from langchain.document_loaders import PyPDFLoader, Docx2txtLoader, UnstructuredPowerPointLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.memory import ConversationBufferMemory
+from langchain.memory import ConversationBufferMemory, StreamlitChatMessageHistory
 from langchain.vectorstores import FAISS
-from langchain.memory import StreamlitChatMessageHistory
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain_openai import ChatOpenAI
 
-
-
-
-import pandas as pd
-import streamlit as st
-from PIL import Image
-import plotly.graph_objects as go
-import plotly.express as px
-import numpy as np
-import joblib
-import pickle
-import os
-from fpdf import FPDF
-from io import BytesIO
-import json
-import os 
-import pandas as pd
-import streamlit as st
-import base64
-import numpy as np
 
 from funcs import load_css, load_local_font
 current_dir = os.path.dirname(os.path.abspath(__file__))
