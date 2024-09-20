@@ -37,4 +37,3 @@ unstructured
 plotly
 fpdf
 scikit-learn
-transformers sentence-transformers torch
