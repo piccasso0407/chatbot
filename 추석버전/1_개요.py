@@ -41,6 +41,10 @@ from funcs import load_css, load_local_font
 # 페이지 로드
 
 # 페이지 설정
+with st.sidebar:
+    st.subheader("메뉴")
+    st.markdown("* * *")
+st.markdown("* * *")
 
 # GitHub에서 CSS 파일 불러오기
 github_url = "https://raw.githubusercontent.com/piccasso0407/chatbot/main/추석버전/style.css"  # 실제 URL로 변경
