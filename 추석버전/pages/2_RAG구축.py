@@ -16,7 +16,7 @@ import os
 
 # 페이지 로드
 
-st.markdown("* * *")
+
 current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(current_dir, "images", "주차별메뉴.jpg")
 image_path2 = os.path.join(current_dir, "images", "벡터스토어.jpg")
