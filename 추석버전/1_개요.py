@@ -69,7 +69,15 @@ def load_local_font(font_name, font_path):
     """
     st.markdown(font_css, unsafe_allow_html=True)
 
-current_subheader = "|Techstack"
+st.markdown("* * *")
+
+# 기술 스택 표시
+st.markdown(
+    """
+    <h3 style='font-size: 30px; font-family: Pretendard;'>|tech stack</h3>
+    """, 
+    unsafe_allow_html=True
+)
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(current_dir, "images", "techstack.jpg")
