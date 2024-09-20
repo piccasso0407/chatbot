@@ -380,10 +380,6 @@ if os.path.exists(file_path1):
     st.dataframe(final_data)
 
 
-# 데이터프레임을 스트림릿 화면에 출력
-st.subheader("개별점수")
-st.dataframe(df)
-
 image_path5 = os.path.join(current_dir, "images", "test_final.jpg")
 st.subheader("종합점수")
 st.image(image_path5)
