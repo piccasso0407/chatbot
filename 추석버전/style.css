@@ -1,5 +1,10 @@
 /* 전체 폰트설정*/
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap');
 
+body {
+    font-family: 'Pretendard', sans-serif;
+}
 
 /* 헤더 지우기*/
 header.css-147i1ru.e8zbici2 {
