@@ -46,8 +46,17 @@ from langchain.memory import StreamlitChatMessageHistory
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain_openai import ChatOpenAI
 st.subheader("QnA set")
+
+# Set the current directory and file path
 current_dir = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(current_dir, 'qnaset1.xlsx')
+
+# Check if the file exists
+if os.path.exists(file_path):
+    # Read the Excel file into a DataFrame
+    qa_data = pd.read_excel(file_path)
+    # Display the DataFrame
+    st.dataframe(qa_data)
 st.dataframe(file_path)
 
 import PyPDF2
