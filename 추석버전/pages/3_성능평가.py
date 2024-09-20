@@ -350,7 +350,7 @@ print("Context Precision Result:", result_context_precision)
 ''')
 st.write("참고문헌")
 # Arxiv 요약 페이지 링크 추가
-st.markdown(f'[논문 바로가기]({abs_url})', unsafe_allow_html=True)
+st.markdown(f'[논문 바로가기]("https://arxiv.org/abs/2309.15217")', unsafe_allow_html=True)
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(current_dir, "images", "faithfulness.jpg")
