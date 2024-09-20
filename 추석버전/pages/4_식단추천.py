@@ -14,14 +14,12 @@ import time
 from langchain.prompts import ChatPromptTemplate
 from funcs import load_css, load_local_font
 # 페이지 로드
-from info import info_page 
-from form import form_page
 
-load_css('./style.css')
-# 폰트 설정
-# Streamlit 앱의 제목
-st.title("저염식 식단 챗봇")
-load_local_font('Pretendard', 'C:\Windows\Fonts\Arial.ttf')
+# load_css('style.css')
+# # 폰트 설정
+# # Streamlit 앱의 제목
+# st.title("저염식 식단 챗봇")
+# load_local_font('Pretendard', 'C:\Windows\Fonts\Arial.ttf')
 
 # PDF 파일 읽기 함수
 def read_pdf(file_path):
