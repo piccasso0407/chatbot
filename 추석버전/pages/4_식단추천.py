@@ -38,7 +38,15 @@ def read_docx(file_path):
     for para in doc.paragraphs:
         full_text.append(para.text)
     return '\n'.join(full_text)
+import os
 
+# 파일 경로가 올바른지 출력하여 확인
+# 현재 스크립트 파일의 절대경로를 가져옴
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# 특정 파일의 절대경로 설정 (예: docx 파일)
+docx_file_path = os.path.join(current_dir, 'data', 'recipes.docx')
+pdf_file_path2 = os.path.join(current_dir, 'data', '1.docx')
 # 파일 경로
 # pdf_file_path = "./02-우리_몸이_원하는_삼삼한밥상_Ⅸ_본문(화면용_펼침).pdf"
 docx_file_path = "./data/recipes.docx"
