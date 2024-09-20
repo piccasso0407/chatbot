@@ -48,7 +48,7 @@ from langchain_openai import ChatOpenAI
 st.subheader("QnA set")
 current_dir = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(current_dir, 'qnaset1.xlsx')
-st.dataframe(qa_data)
+st.dataframe(file_path)
 
 import PyPDF2
 import docx  # For reading DOCX files
