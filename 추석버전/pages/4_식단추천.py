@@ -37,8 +37,6 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.write("Pretendard 폰트가 적용된 텍스트입니다.")
-
 st.code('''
 # PDF 파일 읽기 함수
 def read_pdf(file_path):
