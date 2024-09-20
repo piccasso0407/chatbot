@@ -13,13 +13,20 @@ import os
 import time
 from langchain.prompts import ChatPromptTemplate
 from funcs import load_css, load_local_font
+current_dir = os.path.dirname(os.path.abspath(__file__))
+css_path = os.path.join(current_dir, 'style.css')
 
+# CSS 파일 로드 함수
+def load_css(file_name):
+    if os.path.exists(file_name):
+        with open(file_name, 'r', encoding='utf-8') as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    else:
+        st.error(f"CSS 파일을 찾을 수 없습니다: {file_name}")
 
-# load_css('./style.css')
-# # 폰트 설정
-# # Streamlit 앱의 제목
-# st.title("저염식 식단 챗봇")
-# load_local_font('Pretendard', 'C:\Windows\Fonts\Arial.ttf')
+# CSS 파일 로드
+load_css(css_path)
+
 st.code('''
 # PDF 파일 읽기 함수
 def read_pdf(file_path):
