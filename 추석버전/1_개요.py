@@ -70,7 +70,7 @@ def load_local_font(font_name, font_path):
     st.markdown(font_css, unsafe_allow_html=True)
 
 st.markdown("* * *")
-
+load_css("1_개요.py")
 # 기술 스택 표시
 st.markdown(
     """
