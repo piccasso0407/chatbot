@@ -53,11 +53,6 @@ def load_css(url):
 # CSS 파일 로드
 load_css(github_url)
 
-import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap');
-
-body {
-    font-family: 'Pretendard', sans-serif;
-
 
 st.markdown("* * *")
 
