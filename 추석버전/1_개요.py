@@ -39,8 +39,7 @@ import json
 # funcs.py
 from funcs import load_css, load_local_font
 # 페이지 로드
-from info import info_page 
-from form import form_page
+
 # 페이지 설정
 
 # GitHub에서 CSS 파일 불러오기
