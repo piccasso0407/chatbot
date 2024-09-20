@@ -57,7 +57,7 @@ def load_css(file_name):
 load_css(css_path)
 
 # Pretendard 폰트 로드
-load_local_font('Pretendard', './fonts/Pretendard-Regular.ttf')
+load_local_font('Pretendard', './font/Pretendard-Regular.ttf')
 
 st.markdown("* * *")
 
