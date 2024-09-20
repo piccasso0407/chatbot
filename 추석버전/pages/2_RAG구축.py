@@ -25,7 +25,10 @@ image_path3 = os.path.join(current_dir, "images", "임베딩.jpg")
 st.subheader("1. 파일 읽기")
 st.image(image_path)
 # 파일 경로
-file_path = './week_menu_by_day.pdf'
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(current_dir, 'week_menu_by_day.pdf')
+
 
 # PDF 파일 읽기 함수
 def read_pdf(file_path):
