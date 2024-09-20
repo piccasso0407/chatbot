@@ -120,11 +120,13 @@ image_path3 = os.path.join(current_dir, "images", "lmstudio.jpg")
 # 파일이 있는지 확인하고 이미지를 로드
 
 with col1:
-    st.image(image_path2, caption="올라마", use_column_width=True)
-    st.markdown("[올라마 바로가기](https://ollama.com/)")
+    if os.path.exists(image_path):
+        st.image(image_path2, caption="올라마", use_column_width=True)
+        st.markdown("[올라마 바로가기](https://ollama.com/)")
 with col2:
-    st.image(image_path3,  caption="lmstudio.", use_column_width=True)
-    st.markdown("[lmsutdio 바로가기](https://lmstudio.ai/)")
+    if os.path.exists(image_path):
+        st.image(image_path3,  caption="lmstudio.", use_column_width=True)
+        st.markdown("[lmsutdio 바로가기](https://lmstudio.ai/)")
 
 st.markdown("* * *")
 
