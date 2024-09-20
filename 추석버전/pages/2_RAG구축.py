@@ -1,6 +1,5 @@
 import streamlit as st
 import PyPDF2
-from konlpy.tag import Okt
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import FAISS
