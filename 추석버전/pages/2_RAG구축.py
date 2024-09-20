@@ -22,9 +22,15 @@ from form import form_page
 load_css('./style.css')
 # 폰트 설정
 load_local_font('Pretendard', 'C:\Windows\Fonts\Arial.ttf')
-
+current_dir = os.path.dirname(os.path.abspath(__file__))
+image_path = os.path.join(current_dir, "images", "주차별메뉴.jpg")
+image_path2 = os.path.join(current_dir, "images", "벡터스토어.jpg")
+image_path3 = os.path.join(current_dir, "images", "임베딩.jpg")
+# 파일이 있는지 확인하고 이미지를 로드
+if os.path.exists(image_path):
+    st.image(image_path)
 st.subheader("1. 파일 읽기")
-st.image("images/주차별메뉴.jpg")
+st.image(image_path)
 # 파일 경로
 file_path = './week_menu_by_day.pdf'
 
@@ -110,7 +116,7 @@ else:
 
 st.subheader('3. 벡터스토어')
 st.write("여러가지 벡터스토어")
-st.image("images/벡터스토어.jpg")
+st.image(image_path2)
 st.write("faiss와 chroma의 차이")
 st.markdown("""
     [ChromaDB vs FAISS 비교](https://medium.com/@sujathamudadla1213/chromadb-vsfaiss-65cdae3012ab)
@@ -136,7 +142,7 @@ def get_vectorstore(_text_chunks, selected_model):
     return vectordb
 ''')
 st.subheader("4. 임베딩 모델이란?")
-st.image("images/임베딩.jpg")
+st.image(image_path3)
 st.markdown(
     """
     [임베딩이란? (LLM 활용을 위한)](https://www.gnict.org/blog/130/%EA%B8%80/llm%ED%99%9C%EC%9A%A9%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%9E%84%EB%B2%A0%EB%94%A9%EC%9D%B4%EB%9E%80/)
