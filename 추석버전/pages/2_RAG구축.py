@@ -29,6 +29,17 @@ def load_css(file_name):
 # CSS 파일 로드
 load_css(css_path)
 
+# Pretendard 폰트 로드
+st.markdown("""
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <style>
+        html, body, [class*="css"] {
+            font-family: 'Pretendard', sans-serif;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
+
 current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(current_dir, "images", "주차별메뉴.jpg")
 image_path2 = os.path.join(current_dir, "images", "벡터스토어.jpg")
