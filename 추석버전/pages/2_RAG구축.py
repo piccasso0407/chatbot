@@ -129,7 +129,7 @@ selected_model = "jhgan/ko-sroberta-multitask"
 def get_vectorstore(_text_chunks, selected_model):
     embeddings = HuggingFaceEmbeddings(
         model_name=selected_model,
-        model_kwargs={'device': 'cuda'},
+        model_kwargs={'device': 'cpu'},
         encode_kwargs={'normalize_embeddings': True}
     )
     vectordb = FAISS.from_documents(_text_chunks, embeddings)
