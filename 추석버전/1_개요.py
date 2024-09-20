@@ -52,7 +52,9 @@ def load_css(url):
 # CSS 파일 로드
 load_css(github_url)
 
-
+with st.sidebar:
+    st.subheader("메뉴")
+    st.markdown("* * *")
 st.markdown("* * *")
 
 st.markdown(
