@@ -113,12 +113,17 @@ st.markdown(
     unsafe_allow_html=True
 )
 col1, col2= st.columns(2)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+image_path2 = os.path.join(current_dir, "images", "올라마.jpg")
+image_path3 = os.path.join(current_dir, "images", "lmstudio.jpg")
+
+# 파일이 있는지 확인하고 이미지를 로드
 
 with col1:
-    st.image("pages/images/올라마.jpg", caption="올라마", use_column_width=True)
+    st.image(image_path2, caption="올라마", use_column_width=True)
     st.markdown("[올라마 바로가기](https://ollama.com/)")
 with col2:
-    st.image("pages/images/lmstudio.jpg",  caption="lmstudio.", use_column_width=True)
+    st.image(image_path3,  caption="lmstudio.", use_column_width=True)
     st.markdown("[lmsutdio 바로가기](https://lmstudio.ai/)")
 
 st.markdown("* * *")
