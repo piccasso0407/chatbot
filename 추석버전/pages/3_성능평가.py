@@ -349,27 +349,14 @@ print("Context Precision Result:", result_context_precision)
         
 ''')
 st.write("참고문헌")
-col1, col2 = st.columns(2)
+# Arxiv 요약 페이지 링크 추가
+st.markdown(f'[논문 바로가기]({abs_url})', unsafe_allow_html=True)
 
 
-with col1:
-    
-    pdf_url = "https://arxiv.org/pdf/2309.15217"
-
-    # 논문 요약 페이지 URL
-    abs_url = "https://arxiv.org/abs/2309.15217"
-
-    # PDF 파일을 iframe으로 표시
-    st.markdown(f'<iframe src="{pdf_url}" width="100%" height="800px"></iframe>', unsafe_allow_html=True)
-
-    # Arxiv 요약 페이지 링크 추가
-    st.markdown(f'[논문 바로가기]({abs_url})', unsafe_allow_html=True)
-
-with col2:
-    st.image("images/faithfulness.jpg")
-    st.image("images/amnswerrelevancy.jpg")
-    st.image("images/contextrecall.jpg")
-    st.image("images/contextprecision.jpg")
+st.image("images/faithfulness.jpg")
+st.image("images/amnswerrelevancy.jpg")
+st.image("images/contextrecall.jpg")
+st.image("images/contextprecision.jpg")
 
 
 
