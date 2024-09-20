@@ -385,14 +385,13 @@ image_path = os.path.join(current_dir, "images", "faithfulness.jpg")
 image_path2 = os.path.join(current_dir, "images", "amnswerrelevancy.jpg")
 image_path3 = os.path.join(current_dir, "images", "contextrecall.jpg")
 image_path4 = os.path.join(current_dir, "images", "contextprecision.jpg")
-col1, col2= st.columns(2)
 
-with col1:
-    st.image(image_path)
-    st.image(image_path2)
-with col2:
-    st.image(image_path3)
-    st.image(image_path4)
+
+
+st.image(image_path)
+st.image(image_path2)
+st.image(image_path3)
+st.image(image_path4)
 
 
 
