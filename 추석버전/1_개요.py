@@ -62,7 +62,12 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.image("pages/images/techstack.jpg")
+current_dir = os.path.dirname(os.path.abspath(__file__))
+image_path = os.path.join(current_dir, "images", "techstack.jpg")
+
+# 파일이 있는지 확인하고 이미지를 로드
+if os.path.exists(image_path):
+    st.image(image_path)
 
 
 st.markdown("* * *")
