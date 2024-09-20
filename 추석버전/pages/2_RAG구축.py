@@ -130,7 +130,7 @@ def get_vectorstore(_text_chunks, selected_model):
 st.code('''
 def get_vectorstore(_text_chunks, selected_model):
     embeddings = HuggingFaceEmbeddings(
-        model_name=selected_model,
+        model_name="jhgan/ko-sroberta-multitask",
         model_kwargs={'device': 'cuda'},
         encode_kwargs={'normalize_embeddings': True}
     )
