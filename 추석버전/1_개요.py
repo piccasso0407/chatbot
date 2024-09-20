@@ -135,22 +135,7 @@ with col2:
 
 st.markdown("* * *")
 
-st.write("모델 내려받기")
 
 
-st.write('둘 중 하나를 설치 후 원하는 모델을 내려받습니다.')
-st.write('저는 테스트를 위해 올라마와 lmstudio를 모두 설치했고') 
-st.write('Meta-Llama-3.1-8B-Instruct-GGUF,')
-st.write('teddylee777/EEVE-Korean-Instruct-10.8B-v1.0-gguf를 내려받았습니다.')
-col1, col2 = st.columns(2)
-
-with col1:
-    st.image("pages/images/ollamalist.jpg", use_column_width=True)
-
-with col2:
-    st.image("pages/images/lmstudiolistbic.jpg", use_column_width=True)
-
-
-# 탭 2: 전처리 (파일 읽기 추가)
     
 
