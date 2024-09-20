@@ -68,9 +68,9 @@ def load_local_font(font_name, font_path):
     </style>
     """
     st.markdown(font_css, unsafe_allow_html=True)
-
+load_css('./style.css')
 st.markdown("* * *")
-load_css("style.css")
+
 # 기술 스택 표시
 st.markdown(
     """
