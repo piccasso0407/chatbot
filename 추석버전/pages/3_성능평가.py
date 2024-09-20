@@ -254,7 +254,6 @@ def process_user_query(query):
     response = result['answer']
     return response
 
-import pandas as pd
 
 # 대화 체인을 통해 질의에 대한 답변과 관련 문서를 한 번에 가져오는 함수
 def process_question(question):
@@ -287,6 +286,7 @@ dataset = Dataset.from_pandas(qa_data)
 test_middle = pd.read_excel('test_middle.xlsx')
 st.dataframe(test_middle)
 
+st.markdown("* * *")
 st.subheader("ragas")
 st.code('''
 from ragas.metrics import (
