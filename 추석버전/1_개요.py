@@ -44,7 +44,7 @@ from form import form_page
 # 페이지 설정
 
 
-@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap');
+import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap');
 
 body {
     font-family: 'Pretendard', sans-serif;
