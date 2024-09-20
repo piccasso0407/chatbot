@@ -57,7 +57,6 @@ if os.path.exists(file_path):
     qa_data = pd.read_excel(file_path)
     # Display the DataFrame
     st.dataframe(qa_data)
-st.dataframe(file_path)
 
 import PyPDF2
 import docx  # For reading DOCX files
