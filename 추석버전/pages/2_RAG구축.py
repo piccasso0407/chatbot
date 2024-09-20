@@ -12,11 +12,8 @@ import streamlit as st
 import numpy as np
 from langchain.embeddings import HuggingFaceEmbeddings
 from sklearn.metrics.pairwise import cosine_similarity
-# funcs.py
-from funcs import load_css, load_local_font
+
 # 페이지 로드
-from info import info_page 
-from form import form_page
 
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
