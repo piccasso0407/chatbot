@@ -1,0 +1,37 @@
+# Streamlit: 웹 애플리케이션 프레임워크
+streamlit
+
+# PyPDF2: PDF 파일 읽기
+PyPDF2
+
+# python-docx: DOCX 파일 읽기
+python-docx
+
+# LangChain 관련 패키지
+langchain  # LangChain의 주요 패키지
+langchain-openai  # OpenAI 관련 모듈 포함
+langchain-community  # 커뮤니티 기반 추가 기능
+
+# FAISS: 벡터 스토어를 위한 라이브러리
+faiss-cpu  # CPU 버전, GPU를 사용하지 않는 경우
+
+# Transformers: HuggingFace 모델을 위한 패키지
+transformers
+huggingface-hub
+
+# 기타 필요한 라이브러리
+tiktoken  # OpenAI와 LangChain 통합에 필요할 수 있음
+
+# pandas: 데이터 프레임 작업을 위한 라이브러리
+pandas
+
+# loguru: 로깅을 위한 라이브러리 (필요할 경우)
+loguru
+
+# PyArrow: 일부 벡터 저장소와의 호환성
+pyarrow
+
+# Unstructured: 비정형 데이터를 처리하는 경우
+unstructured
+
+plotly
