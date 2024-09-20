@@ -117,6 +117,8 @@ st.write("faiss와 chroma의 차이")
 st.markdown("""
     [ChromaDB vs FAISS 비교](https://medium.com/@sujathamudadla1213/chromadb-vsfaiss-65cdae3012ab)
 """)
+
+
 embedding_options = [
     "jhgan/ko-sroberta-multitask",
     "sentence-transformers/all-MiniLM-L6-v2",
