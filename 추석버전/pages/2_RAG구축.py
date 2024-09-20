@@ -16,7 +16,7 @@ import os
 
 # 페이지 로드
 current_dir = os.path.dirname(os.path.abspath(__file__))
-css_path = os.path.join(current_dir, './style.css')
+css_path = os.path.join(current_dir, 'style.css')
 
 # CSS 파일 로드 함수
 def load_css(file_name):
