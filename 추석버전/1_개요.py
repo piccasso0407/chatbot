@@ -44,10 +44,10 @@ from form import form_page
 # 페이지 설정
 
 
-# 외부 CSS 불러오기
-load_css('style.css')
-# 폰트 설정
-load_local_font('Pretendard', 'C:\Windows\Fonts\Arial.ttf')
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap');
+
+body {
+    font-family: 'Pretendard', sans-serif;
 
 
 st.markdown("* * *")
