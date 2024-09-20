@@ -22,6 +22,7 @@ image_path = os.path.join(current_dir, "images", "주차별메뉴.jpg")
 image_path2 = os.path.join(current_dir, "images", "벡터스토어.jpg")
 image_path3 = os.path.join(current_dir, "images", "임베딩.jpg")
 # 파일이 있는지 확인하고 이미지를 로드
+st.markdown("* * *")
 st.subheader("| 파일 읽기")
 st.image(image_path)
 # 파일 경로
@@ -109,7 +110,7 @@ else:
     st.write("문서를 읽어오지 못했습니다.")
 
 
-
+st.markdown("* * *")
 st.subheader('| 벡터스토어')
 st.write("여러가지 벡터스토어")
 st.image(image_path2)
@@ -144,6 +145,8 @@ def get_vectorstore(_text_chunks, selected_model):
     vectordb = FAISS.from_documents(_text_chunks, embeddings)
     return vectordb
 ''')
+
+st.markdown("* * *")
 st.subheader("| 임베딩 모델")
 st.image(image_path3)
 st.markdown(
@@ -201,7 +204,7 @@ if query1 and query2:
     # 결과 출력
     st.write(f"'{query1}'와 '{query2}' 간의 코사인 유사도: {cosine_sim:.4f}")
 
-
+st.markdown("* * *")
 st.subheader("| 대화형 체인")
 
 # 대화형 체인 생성 함수 (히스토리 없이)
@@ -265,6 +268,7 @@ vectorstore = get_vectorstore(text_chunks, selected_model)
 # 대화형 체인 생성
 conversation_chain = get_conversation_chain(vectorstore)
 
+st.markdown("* * *")
 st.subheader("| 프롬프트엔지니어링")
 
 st.code('''
@@ -309,6 +313,7 @@ st.code('''
 
     ''')
 
+st.markdown("* * *")
 st.subheader("| 대화체인 호출")
 
 st.code('''
