@@ -57,14 +57,7 @@ def load_css(file_name):
 load_css(css_path)
 
 # Pretendard 폰트 로드
-st.markdown("""
-    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
-    <style>
-        html, body, [class*="css"] {
-            font-family: 'Pretendard', sans-serif;
-        }
-    </style>
-    """, unsafe_allow_html=True)
+load_local_font('Pretendard', './fonts/Pretendard-Regular.ttf')
 
 st.markdown("* * *")
 
