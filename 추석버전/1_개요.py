@@ -87,18 +87,7 @@ def linesero():
 github_url = "https://raw.githubusercontent.com/piccasso0407/chatbot/추석버전/1_개요.py/style.css"  # 실제 URL로 변경
 
 # CSS 파일 적용
-def load_css(url):
-    st.markdown(f'<link href="{url}" rel="stylesheet">', unsafe_allow_html=True)
 
-# CSS 파일 로드
-load_css(github_url)
-
-st.markdown(
-    """
-    <h3 style='font-size: 30px; font-family: Pretendard;'>|tech stack</h3>
-    """, 
-    unsafe_allow_html=True
-)
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(current_dir, "images", "techstack.jpg")
