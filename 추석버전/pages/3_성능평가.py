@@ -45,6 +45,21 @@ from langchain.vectorstores import FAISS
 from langchain.memory import StreamlitChatMessageHistory
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain_openai import ChatOpenAI
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+css_path = os.path.join(current_dir, 'style.css')
+
+# CSS 파일 로드 함수
+def load_css(file_name):
+    if os.path.exists(file_name):
+        with open(file_name, 'r', encoding='utf-8') as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    else:
+        st.error(f"CSS 파일을 찾을 수 없습니다: {file_name}")
+
+# CSS 파일 로드
+load_css(css_path)
+
 st.markdown("* * *")
 st.subheader("|QnA set")
 
