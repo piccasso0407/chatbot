@@ -16,13 +16,13 @@ import os
 
 # 페이지 로드
 
-
+st.markdown("* * *")
 current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(current_dir, "images", "주차별메뉴.jpg")
 image_path2 = os.path.join(current_dir, "images", "벡터스토어.jpg")
 image_path3 = os.path.join(current_dir, "images", "임베딩.jpg")
 # 파일이 있는지 확인하고 이미지를 로드
-st.subheader("1. 파일 읽기")
+st.subheader("| 파일 읽기")
 st.image(image_path)
 # 파일 경로
 
@@ -61,8 +61,8 @@ st.write(f"전체 페이지 수:{len_str}")
 # 데이터를 문서 리스트로 변환
 documents = [Document(page_content=text) for text in pdf_content]
 
-
-st.subheader("2. 청크 나누기")
+st.markdown("* * *")
+st.subheader("| 청크 나누기")
 st.write("청크란?")
 st.write("""rag를 구축하는 데 있어 시스템의 효율성과 성능을 결정하는 중요한 매개 변수 중 하나이다.
         임베딩에서 알고리즘도 중요하지만 가장 중요한 것중 하나는 어떻게 문서를 파편으로 잘라낼것인가? 이다. 
@@ -110,7 +110,7 @@ else:
 
 
 
-st.subheader('3. 벡터스토어')
+st.subheader('| 벡터스토어')
 st.write("여러가지 벡터스토어")
 st.image(image_path2)
 st.write("faiss와 chroma의 차이")
@@ -144,7 +144,7 @@ def get_vectorstore(_text_chunks, selected_model):
     vectordb = FAISS.from_documents(_text_chunks, embeddings)
     return vectordb
 ''')
-st.subheader("4. 임베딩 모델이란?")
+st.subheader("| 임베딩 모델")
 st.image(image_path3)
 st.markdown(
     """
@@ -202,7 +202,7 @@ if query1 and query2:
     st.write(f"'{query1}'와 '{query2}' 간의 코사인 유사도: {cosine_sim:.4f}")
 
 
-st.subheader("5. 대화형 체인")
+st.subheader("| 대화형 체인")
 
 # 대화형 체인 생성 함수 (히스토리 없이)
 def get_conversation_chain(_vectorstore):
@@ -265,7 +265,7 @@ vectorstore = get_vectorstore(text_chunks, selected_model)
 # 대화형 체인 생성
 conversation_chain = get_conversation_chain(vectorstore)
 
-st.subheader("6. 프롬프트엔지니어링")
+st.subheader("| 프롬프트엔지니어링")
 
 st.code('''
     def get_prompt_template(query):
@@ -309,7 +309,7 @@ st.code('''
 
     ''')
 
-st.subheader("7. 대화체인 호출")
+st.subheader("| 대화체인 호출")
 
 st.code('''
 chain = conversation_chain
