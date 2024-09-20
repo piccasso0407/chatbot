@@ -68,25 +68,6 @@ def load_local_font(font_name, font_path):
     </style>
     """
     st.markdown(font_css, unsafe_allow_html=True)
-# 줄 가로,세로
-def linegaro():
-    st.markdown(
-        """
-        <div style="border-top: 3px solid #D4BDAC; width: 100%;"></div>
-        """,
-        unsafe_allow_html=True)
-def linesero():
-    st.markdown(
-        """
-        <div style="border-right: 3px solid #D4BDAC; height: flex;"></div>
-        """,
-        unsafe_allow_html=True)
-# funcs.py
-# 페이지 설정
-# GitHub에서 CSS 파일 불러오기
-github_url = "https://raw.githubusercontent.com/piccasso0407/chatbot/추석버전/1_개요.py/style.css"  # 실제 URL로 변경
-
-# CSS 파일 적용
 
 current_subheader = "|Techstack"
 
