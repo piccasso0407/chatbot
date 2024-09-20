@@ -45,7 +45,7 @@ from langchain.vectorstores import FAISS
 from langchain.memory import StreamlitChatMessageHistory
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain_openai import ChatOpenAI
-st.subheader("QnA set")
+st.subheader("|QnA set")
 
 # Set the current directory and file path
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -80,7 +80,7 @@ import streamlit as st
 # load_local_font('Pretendard', 'C:\Windows\Fonts\Arial.ttf')
 
     
-st.subheader("내 모델 로드")     
+st.subheader("|내 모델 로드")     
 with st.expander("코드 보기"):
     st.code('''
 # PDF 파일 읽기 함수
@@ -244,7 +244,7 @@ def get_conversation_chain(_vectorstore):
 # 대화형 체인 생성
 conversation_chain = get_conversation_chain(vectorstore)
 ''')
-st.subheader("ragas에 필요한 내 llm 답변 출력")       
+st.subheader("|ragas에 필요한 내 llm 답변 출력")       
 st.code('''
 # 사용자 질의 처리 함수
 def process_user_query(query):
@@ -350,7 +350,7 @@ print("Context Precision Result:", result_context_precision)
 ''')
 st.write("참고문헌")
 # Arxiv 요약 페이지 링크 추가
-st.markdown(f'[논문 바로가기]("https://arxiv.org/abs/2309.15217")', unsafe_allow_html=True)
+st.markdown(f'[바로가기]("https://arxiv.org/abs/2309.15217")', unsafe_allow_html=True)
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(current_dir, "images", "faithfulness.jpg")
@@ -367,7 +367,7 @@ st.image(image_path4)
 
 
 
-st.subheader("개별점수")
+st.subheader("|개별점수")
 # Set the current directory and file path
 current_dir = os.path.dirname(os.path.abspath(__file__))
 file_path1 = os.path.join(current_dir, 'test_result.csv')
@@ -381,17 +381,17 @@ if os.path.exists(file_path1):
 
 
 image_path5 = os.path.join(current_dir, "images", "test_final.jpg")
-st.subheader("종합점수")
+st.subheader("|종합점수")
 st.image(image_path5)
 
 
 
-st.subheader("한계점")
+st.subheader("|한계점")
 st.write("1. llm(GPT4)으로 qna 셋을 만들어 그라운드 데이터가 정확하지 않다. ")
 st.write("2. 알 수 없는 이유로 null값이 많이 출력되었다.(토큰 수 제한과 관련있어 보임)")
 st.write("3. 유료모델(GPTAPI) 사용으로 테스트에 한계가 있었다.(테스트 한 번에 5-7달러 가량 소모)")
 
-st.subheader("앞으로의 과제")
+st.subheader("|앞으로의 과제")
 st.write("1. qna 데이터셋을 직접 만들어 오차율을 줄일 것. ")
 st.write("2. null값 줄이기. ")
 st.write("3. ollama모델로 대체할 방법 찾기. ")
