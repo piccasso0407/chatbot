@@ -43,6 +43,15 @@ from info import info_page
 from form import form_page
 # 페이지 설정
 
+# GitHub에서 CSS 파일 불러오기
+github_url = "https://raw.githubusercontent.com/piccasso0407/chat/main/추석버전/style.css"  # 실제 URL로 변경
+
+# CSS 파일 적용
+def load_css(url):
+    st.markdown(f'<link href="{url}" rel="stylesheet">', unsafe_allow_html=True)
+
+# CSS 파일 로드
+load_css(github_url)
 
 import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700&display=swap');
 
