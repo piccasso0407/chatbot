@@ -26,7 +26,8 @@ from langchain.memory import ConversationBufferMemory, StreamlitChatMessageHisto
 from langchain.vectorstores import FAISS
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain_openai import ChatOpenAI
-
+# 페이지 설정: 화면을 가로로 넓게 사용
+st.set_page_config(layout="wide")
 
 from funcs import load_css, load_local_font
 current_dir = os.path.dirname(os.path.abspath(__file__))
