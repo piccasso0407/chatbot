@@ -318,7 +318,7 @@ st.subheader("RAGAS: Automated Evaluation of Retrieval Augmented Generation")
 
 
 # 링크를 Markdown 형식으로 작성
-st.markdown("[RAGAS공식페이지 바로가기](https://docs.ragas.io/en/stable/)")
+st.markdown("[RAGAS 방문하기](https://docs.ragas.io/en/stable/)")
 
 st.code('''
 from ragas.metrics import (
