@@ -45,6 +45,7 @@ from langchain.vectorstores import FAISS
 from langchain.memory import StreamlitChatMessageHistory
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain_openai import ChatOpenAI
+st.set_page_config(layout="wide")
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 css_path = os.path.join(current_dir, 'style.css')
