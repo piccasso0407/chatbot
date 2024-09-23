@@ -36,24 +36,12 @@ st.markdown("""
         }
     </style>
     """, unsafe_allow_html=True)
-import streamlit as st
-import PyPDF2
-import docx  # For reading DOCX files
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
-from langchain.chains import ConversationalRetrievalChain
-from langchain.schema import Document
-from string import Template
-import re
-import os
-import time
-import openai  # Import OpenAI library
-from langchain.prompts import ChatPromptTemplate
-from funcs import load_css, load_local_font
+
 # 페이지 로드
 
+import dotenv
 
+dotenv_file = dotenv.find_dotenv()
 # PDF 파일 읽기 함수
 def read_pdf(file_path):
     pdf_text = []
