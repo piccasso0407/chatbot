@@ -26,6 +26,7 @@ from langchain.memory import ConversationBufferMemory, StreamlitChatMessageHisto
 from langchain.vectorstores import FAISS
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain_openai import ChatOpenAI
+
 # 페이지 설정: 화면을 가로로 넓게 사용
 st.set_page_config(layout="wide")
 
@@ -43,14 +44,16 @@ def load_css(file_name):
 
 # CSS 파일 로드
 load_css(css_path)
+
+# RAG 설명 섹션
 st.markdown(
     """
     <h3 style='font-size: 30px; font-family: Pretendard;'>|RAG란?</h3>
     """,
     unsafe_allow_html=True
 )
+
 # 파일이 있는지 확인하고 이미지를 로드
-current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path4 = os.path.join(current_dir, "images", "langchain.jpg")
 
 # 이미지가 있을 경우 표시
@@ -63,8 +66,6 @@ col1, col2 = st.columns(2)
 
 # RAG 구축 설명 표시
 with col1:
-
-
     st.write('''RAG(Retrieval-Augmented Generation: 검색증강생성)는 대규모 언어 모델의 출력을 최적화하여 응답을 생성하기 전에
                 학습 데이터 소스 외부의 신뢰할 수 있는 지식 베이스를 참조하도록 하는 프로세스입니다.''')
     
@@ -89,7 +90,6 @@ with col2:
 
 st.markdown("* * *")
 
-
 # 기본설정
 st.markdown(
     """
@@ -97,25 +97,26 @@ st.markdown(
     """, 
     unsafe_allow_html=True
 )
-col1, col2= st.columns(2)
+col1, col2 = st.columns(2)
 
+# 이미지 경로 설정
 image_path2 = os.path.join(current_dir, "images", "올라마.jpg")
 image_path3 = os.path.join(current_dir, "images", "lmstudio.jpg")
 
-# 파일이 있는지 확인하고 이미지를 로드
-
+# 이미지 로드 확인 및 표시
 with col1:
-    if os.path.exists(image_path):
+    if os.path.exists(image_path2):
         st.image(image_path2, caption="올라마", use_column_width=True)
         st.markdown("[올라마 바로가기](https://ollama.com/)")
+
 with col2:
-    if os.path.exists(image_path):
-        st.image(image_path3,  caption="lmstudio.", use_column_width=True)
-        st.markdown("[lmsutdio 바로가기](https://lmstudio.ai/)")
+    if os.path.exists(image_path3):
+        st.image(image_path3, caption="lmstudio.", use_column_width=True)
+        st.markdown("[lmstudio 바로가기](https://lmstudio.ai/)")
 
 st.markdown("* * *")
 
-
+# 기술 스택 표시
 st.markdown(
     """
     <h3 style='font-size: 30px; font-family: Pretendard;'>|tech stack</h3>
@@ -123,7 +124,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(current_dir, "images", "techstack.jpg")
 
 # 파일이 있는지 확인하고 이미지를 로드
@@ -131,4 +131,3 @@ if os.path.exists(image_path):
     st.image(image_path)
 
 st.markdown("* * *")
-    
