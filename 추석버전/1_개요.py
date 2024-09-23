@@ -49,21 +49,7 @@ col1, col2 = st.columns(2)
 
 # 기술 스택 표시
 with col1:
-    st.markdown(
-        """
-        <h3 style='font-size: 30px; font-family: Pretendard;'>|tech stack</h3>
-        """,
-        unsafe_allow_html=True
-    )
 
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    image_path = os.path.join(current_dir, "images", "techstack.jpg")
-
-    # 파일이 있는지 확인하고 이미지를 로드
-    if os.path.exists(image_path):
-        st.image(image_path)
-
-    st.markdown("* * *")
 
 # RAG 구축 설명 표시
 with col2:
@@ -85,12 +71,7 @@ with col2:
     
     current_dir = os.path.dirname(os.path.abspath(__file__))
     image_path4 = os.path.join(current_dir, "images", "langchain.jpg")
-    
-    # 파일이 있는지 확인하고 이미지를 로드
-    if os.path.exists(image_path):
-        st.image(image_path4, caption="RAG system 흐름도.", use_column_width=True)
-    
-    st.write(
+     st.write(
         '''
         1. RAG 모델은 다음과 같이 동작합니다.
         - 질문을 입력받습니다.
@@ -102,6 +83,12 @@ with col2:
         '''
     )
     st.markdown("* * *")
+
+    col2:
+# 파일이 있는지 확인하고 이미지를 로드
+    if os.path.exists(image_path):
+        st.image(image_path4, caption="RAG system 흐름도.", use_column_width=True)
+    
 
 # 기본설정
 st.markdown(
@@ -129,5 +116,19 @@ with col2:
 st.markdown("* * *")
 
 
+st.markdown(
+    """
+    <h3 style='font-size: 30px; font-family: Pretendard;'>|tech stack</h3>
+    """,
+    unsafe_allow_html=True
+)
 
+current_dir = os.path.dirname(os.path.abspath(__file__))
+image_path = os.path.join(current_dir, "images", "techstack.jpg")
+
+# 파일이 있는지 확인하고 이미지를 로드
+if os.path.exists(image_path):
+    st.image(image_path)
+
+st.markdown("* * *")
     
