@@ -391,9 +391,9 @@ image_path = os.path.join(current_dir, "images", "faithfulness.jpg")
 image_path2 = os.path.join(current_dir, "images", "amnswerrelevancy.jpg")
 image_path3 = os.path.join(current_dir, "images", "contextrecall.jpg")
 image_path4 = os.path.join(current_dir, "images", "contextprecision.jpg")
-
-st.subheader("|RAGAS의 평가지표")
 st.markdown("* * *")
+st.subheader("|RAGAS의 평가지표")
+
 st.image(image_path)
 st.image(image_path2)
 st.image(image_path3)
