@@ -52,8 +52,6 @@ import openai  # Import OpenAI library
 from langchain.prompts import ChatPromptTemplate
 from funcs import load_css, load_local_font
 # 페이지 로드
-from info import info_page 
-from form import form_page
 
 
 # PDF 파일 읽기 함수
