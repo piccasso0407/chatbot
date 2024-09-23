@@ -121,13 +121,15 @@ st.markdown("* * *")
 col1, col2 = st.columns(2)
 
 with col1:
-    image_path5 = os.path.join(current_dir, "images", "model.jpg")
-    if os.path.exists(image_path5):
-        st.image(image_path5, caption="여러가지 모델", use_column_width=True)
-with col2:
-    st.write('''원하는 모델을 다운로드 받습니다. 
+        st.write('''원하는 모델을 다운로드 받습니다. 
     저는 teddylee777님이 올려주신 
     teddylee777/EEVE-Korean-Instruct-10.8B-v1.0-gguf 모델을 다운로드 받았습니다. ''')
+    
+
+with col2:
+        image_path5 = os.path.join(current_dir, "images", "model.jpg")
+    if os.path.exists(image_path5):
+        st.image(image_path5, caption="여러가지 모델", use_column_width=True)
 
 # 기술 스택 표시
 st.markdown(
