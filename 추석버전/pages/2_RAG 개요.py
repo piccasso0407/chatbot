@@ -160,6 +160,26 @@ st.write("1. Meta-Llama-3.1-8B-Instruct-GGUF")
 st.write("2. teddylee777/EEVE-Korean-Instruct-10.8B-v1.0-gguf")
 st.markdown("* * *")
 
+
+
+st.write("""
+모델 선택 시 고려사항:
+- 한국어 성능
+- 모델 크기 및 로컬 실행 가능성
+- 추론 속도
+- 메모리 요구사항
+""")
+
+st.markdown("* * *")
+# 다음 단계
+st.subheader("|다음 단계")
+st.write("""
+이어지는 페이지에서는 다음 내용을 다룹니다:
+1. 데이터 준비 및 전처리
+2. 임베딩 생성 및 벡터 데이터베이스 구축
+3. 질의응답 시스템 구현 및 성능테스트
+""")
+
 image_path = os.path.join(current_dir, "images", "techstack.jpg")
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -183,21 +203,3 @@ if os.path.exists(image_path):
     )
 else:
     st.error(f"이미지 파일을 찾을 수 없습니다: {image_path}")
-
-st.write("""
-모델 선택 시 고려사항:
-- 한국어 성능
-- 모델 크기 및 로컬 실행 가능성
-- 추론 속도
-- 메모리 요구사항
-""")
-
-st.markdown("* * *")
-# 다음 단계
-st.subheader("|다음 단계")
-st.write("""
-이어지는 페이지에서는 다음 내용을 다룹니다:
-1. 데이터 준비 및 전처리
-2. 임베딩 생성 및 벡터 데이터베이스 구축
-3. 질의응답 시스템 구현 및 성능테스트
-""")
