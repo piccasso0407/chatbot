@@ -44,7 +44,7 @@ st.markdown("""
 # 첫 번째 화면은 항상 표시되도록 설정
 a, b = st.columns([2, 7])
 with a:
-    image_path = os.path.join(current_dir, "images", "hypre.jpg")
+    image_path = os.path.join(current_dir, "images", "Teamicon.png")
     if os.path.exists(image_path):
         st.image(image_path)
 with b:
