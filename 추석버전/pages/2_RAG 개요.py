@@ -107,7 +107,29 @@ with col2:
     """)
 
 st.markdown("* * *")
+st.subheader("|프로젝트 구조")
+st.code("""
+project/
+│
+├── pages/
+│   ├── 1_개요.py
+│   ├── 2_RAG구축.py
+│   ├── 3_성능평가.py
+│   └── 4_식단추천.py
+│
+├── data/
+│   └── (원본 문서 파일들)
+│
+└── images/
+    └── (사용된 이미지 파일들)
 
+""")
+st.markdown("* * *")
+# 모델 선택 및 설정
+st.subheader("|모델 선택 및 설정")
+st.write("본 프로젝트에서는 다음 모델들을 테스트하였습니다:")
+st.write("1. Meta-Llama-3.1-8B-Instruct-GGUF")
+st.write("2. teddylee777/EEVE-Korean-Instruct-10.8B-v1.0-gguf")
 # 기본설정
 st.markdown(
     """
