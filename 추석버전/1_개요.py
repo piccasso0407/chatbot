@@ -45,27 +45,28 @@ def load_css(file_name):
 load_css(css_path)
 
 st.markdown("* * *")
-
+col1, col2= st.columns(2)
 # 기술 스택 표시
-st.markdown(
-    """
-    <h3 style='font-size: 30px; font-family: Pretendard;'>|tech stack</h3>
-    """, 
-    unsafe_allow_html=True
-)
+with col1:
+    st.markdown(
+        """
+        <h3 style='font-size: 30px; font-family: Pretendard;'>|tech stack</h3>
+        """, 
+        unsafe_allow_html=True
+        )
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-image_path = os.path.join(current_dir, "images", "techstack.jpg")
-
-# 파일이 있는지 확인하고 이미지를 로드
-if os.path.exists(image_path):
-    st.image(image_path)
-
-
-st.markdown("* * *")
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    image_path = os.path.join(current_dir, "images", "techstack.jpg")
+    
+    # 파일이 있는지 확인하고 이미지를 로드
+    if os.path.exists(image_path):
+        st.image(image_path)
+    
+    
+    st.markdown("* * *")
 
 current_subheader = "|RAG 구축"
-
+with col2:
 # 만드는 방법
 st.markdown(
     """
