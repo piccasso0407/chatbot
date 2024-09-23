@@ -192,6 +192,7 @@ st.write("""
 - 메모리 요구사항
 """)
 
+st.markdown("* * *")
 # 다음 단계
 st.subheader("|다음 단계")
 st.write("""
