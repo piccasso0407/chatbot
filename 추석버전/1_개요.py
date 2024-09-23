@@ -132,12 +132,6 @@ with col2:
         st.image(image_path5, caption="여러가지 모델", use_column_width=True)
 
 # 기술 스택 표시
-st.markdown(
-    """
-    <h3 style='font-size: 30px; font-family: Pretendard;'>|tech stack</h3>
-    """,
-    unsafe_allow_html=True
-)
 
 st.markdown("* * *")
 image_path = os.path.join(current_dir, "images", "techstack.jpg")
