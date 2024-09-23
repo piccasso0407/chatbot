@@ -109,14 +109,17 @@ with d:
 
 
 
-st.write('''고혈압 모델 보러가기''')
+st.write("고혈압 모델 보러가기")
+
 st.markdown(
     """
-    <a href="https://pressureproject.streamlit.app" target="_blank" style="text-decoration: none;">
-        <div style="display: inline-block; padding: 10px 20px; background-color: rgb(83, 100, 147); color: white; border-radius: 5px; text-align: center; font-weight: bold;">
-            고혈압예측모델
-        </div>
-    </a>
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+        <a href="https://pressureproject.streamlit.app" target="_blank" style="text-decoration: none;">
+            <div style="display: inline-block; padding: 10px 20px; background-color: rgb(83, 100, 147); color: white; border-radius: 5px; text-align: center; font-weight: bold;">
+                고혈압예측모델
+            </div>
+        </a>
+    </div>
     """,
     unsafe_allow_html=True
 )
