@@ -154,7 +154,7 @@ def get_conversation_chain(_vectorstore):
     )
 
     # OpenAI API Key 설정
-    openai.api_key = "your-openai-api-key"  # Replace with your OpenAI API key
+    openai.api_key = "dotenv_file"  # Replace with your OpenAI API key
 
     conversation_chain = ConversationalRetrievalChain.from_llm(
         llm=ChatOpenAI(), 
