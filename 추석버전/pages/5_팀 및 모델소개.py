@@ -16,7 +16,6 @@ import os
 # 페이지 설정: 화면을 가로로 넓게 사용
 st.set_page_config(layout="wide")
 # 페이지 로드
-current_dir = os.path.dirname(os.path.abspath(__file__))
 css_path = os.path.join(current_dir, 'style.css')
 
 # CSS 파일 로드 함수
