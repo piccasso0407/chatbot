@@ -127,7 +127,7 @@ with col1:
     
 
 with col2:
-        image_path5 = os.path.join(current_dir, "images", "model.jpg")
+    image_path5 = os.path.join(current_dir, "images", "model.jpg")
     if os.path.exists(image_path5):
         st.image(image_path5, caption="여러가지 모델", use_column_width=True)
 
