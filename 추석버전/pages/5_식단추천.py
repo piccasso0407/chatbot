@@ -154,11 +154,6 @@ def get_conversation_chain(_vectorstore):
     )
     import dotenv
 
-    dotenv_file = dotenv.find_dotenv()
-    dotenv.load_dotenv(dotenv_file)
-    # OpenAI API Key 설정
-    openai.api_key = "dotenv_file"  # Replace with your OpenAI API key
-
     conversation_chain = ConversationalRetrievalChain.from_llm(
         llm=ChatOpenAI(), 
         chain_type="stuff",
