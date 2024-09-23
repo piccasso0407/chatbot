@@ -142,7 +142,7 @@ st.write("여러가지 벡터스토어")
 # 파일이 있는지 확인하고 이미지를 로드
 st.image(image_path2)
 
-st.write("faiss와 chroma의 차이")
+st.markdown("#### faiss와 chroma의 차이")
 st.markdown("""
     [ChromaDB vs FAISS 비교](https://medium.com/@sujathamudadla1213/chromadb-vsfaiss-65cdae3012ab)
 """)
