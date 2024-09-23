@@ -38,7 +38,7 @@ st.markdown("""
         }
     </style>
     """, unsafe_allow_html=True)
-
+current_dir = os.path.dirname(os.path.abspath(__file__))
 # 첫 번째 화면은 항상 표시되도록 설정
 a, b = st.columns([2, 7])
 with a:
