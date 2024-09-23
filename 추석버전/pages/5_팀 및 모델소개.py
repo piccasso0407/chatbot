@@ -42,7 +42,8 @@ st.markdown("""
 # 첫 번째 화면은 항상 표시되도록 설정
 a, b = st.columns([2, 7])
 with a:
-    st.image("hypre.jpg", width=400)
+    image_path = os.path.join(current_dir, "images", "hypre.jpg")
+    st.image(image_path, width=400)
 with b:
     st.markdown('####')
     team_title = '<b style="color:#31333f; font-size: 30px;">Team 고혈압</b>'
