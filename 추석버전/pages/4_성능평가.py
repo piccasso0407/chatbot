@@ -381,7 +381,7 @@ print("Context Recall Result:", result_context_recall)
 print("Context Precision Result:", result_context_precision)
         
 ''')
-st.markdown("* * *")
+
 st.write("참고문헌")
 # Arxiv 요약 페이지 링크 추가
 st.markdown(f'[바로가기]("https://arxiv.org/abs/2309.15217")', unsafe_allow_html=True)
