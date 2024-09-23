@@ -150,7 +150,7 @@ if os.path.exists(image_path):
     st.markdown(
         f"""
         <div style="display: flex; justify-content: center;">
-            <img src="data:image/jpeg;base64,{img_base64}" alt="Image" style="width: 200px;"/>
+            <img src="data:image/jpeg;base64,{img_base64}" alt="Image" style="width: 300px;"/>
         </div>
         """,
         unsafe_allow_html=True
