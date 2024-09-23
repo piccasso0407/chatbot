@@ -68,8 +68,9 @@ def read_docx(file_path):
     return '\n'.join(full_text)
 
 # 파일 경로
-docx_file_path = "./data/recipes.docx"
-pdf_file_path2 = "./1.pdf"
+docx_file_path = os.path.join(current_dir, './data/recipes.docx')
+docx_file_path2 = os.path.join(current_dir, '.1/recipes1.pdf')
+
 
 # PDF 및 DOCX 파일에서 텍스트 불러오기
 docx_content = read_docx(docx_file_path)
