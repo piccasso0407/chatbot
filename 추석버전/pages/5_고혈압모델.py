@@ -40,3 +40,13 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 st.write('''고혈압 모델 보러가기''')
+st.markdown(
+    """
+    <a href="https://pressureproject.streamlit.app" target="_blank" style="text-decoration: none;">
+        <div style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; border-radius: 5px; text-align: center; font-weight: bold;">
+            스트림릿 바로가기
+        </div>
+    </a>
+    """,
+    unsafe_allow_html=True
+)
