@@ -139,12 +139,28 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# 이미지 경로 설정
+st.markdown("* * *")
+image_path = os.path.join(current_dir, "images", "techstack.jpg")
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(current_dir, "images", "techstack.jpg")
 
 # 파일이 있는지 확인하고 이미지를 로드
 if os.path.exists(image_path):
-    # width 파라미터를 사용하여 이미지 크기 조정
-    st.image(image_path, width=200)  # width 값을 적절히 조정하여 크기 설정
+    # 이미지 파일을 base64로 인코딩하여 HTML로 삽입
+    with open(image_path, "rb") as img_file:
+        img_data = img_file.read()
+        img_base64 = base64.b64encode(img_data).decode()
 
-st.markdown("* * *")
+    # HTML을 사용하여 이미지 가운데 정렬
+    st.markdown(
+        f"""
+        <div style="display: flex; justify-content: center;">
+            <img src="data:image/jpeg;base64,{img_base64}" alt="Image" style="width: 200px;"/>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+else:
+    st.error(f"이미지 파일을 찾을 수 없습니다: {image_path}")
+
