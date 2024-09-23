@@ -300,47 +300,80 @@ st.markdown("* * *")
 st.subheader("| 프롬프트엔지니어링")
 
 st.code('''
-    def get_prompt_template(query):
-    # "고혈압"이 포함된 경우 나트륨 1000 이하 식단 추천
-    if "고혈압" in query:
-        prompt = Template(f"""
-        사용자가 원하는 기간에 맞춰
-        나트륨이 1000mg 이하인 식단을 추천해 주세요.
-        무조건 {pdf_file_path} 또는 {docx_file_path} 자료에서만 찾아줘.
-        """)
-        # 저나트륨 예시 식단
-        breakfast = "오트밀, 무염 견과류"
-        lunch = "현미밥, 저염 닭가슴살"
-        dinner = "채소 샐러드, 그릭 요거트"
+   def get_prompt_template(query):
+    pdf_content_str = "\n".join(pdf_content2) if isinstance(pdf_content2, list) else str(pdf_content2)
+    
+    if "식단" in query:
+        prompt = f"""
+        작업: 사용자의 건강 정보를 바탕으로 맞춤형 식단 추천
 
-    # "식단"이 포함되었지만 "고혈압"은 포함되지 않은 경우 나트륨 제한 없는 식단 추천
-    elif "식단" in query and "고혈압" not in query:
-        prompt = Template(f"""
-        사용자가 원하는 기간에 맞춰
-        나트륨 제한 없이 식단을 추천해 주세요.
-        무조건 {pdf_file_path} 또는 {docx_file_path} 자료에서만 찾아줘.
-        """)
-        # 일반 식단 예시
-        breakfast = "토스트, 계란"
-        lunch = "밥, 돼지고기 불고기"
-        dinner = "파스타, 샐러드"
+        참고 정보:
+        1. 사용자 건강 정보: {pdf_content_str}
+        2. 식단 출처: {docx_file_path} 파일의 내용만 사용할 것
 
-    # "레시피"가 포함된 경우 레시피 설명
+        지침:
+        1. 기간: 사용자가 특정 기간을 요청하면 그 기간에 맞춰, 아니면 하루 식단을 추천하세요.
+        2. 형식: 
+           아침: [메뉴1], [메뉴2]
+           점심: [메뉴1], [메뉴2]
+           저녁: [메뉴1], [메뉴2]
+        3. 나트륨 제한:
+           - 고혈압 확률 20% 초과: 나트륨 1000mg 이하 식단
+           - 고혈압 확률 20% 미만: 나트륨 제한 없음
+        4. 추가 정보:
+           - 각 식단의 영양 정보를 포함해 주세요.
+           - 모든 링크는 제거해 주세요.
+           - 아침, 점심, 저녁은 각각 중복이 없게해 주세요.
+ \
+        응답 형식:
+        1. 추천 식단 (위 형식대로)
+        2. 각 식단의 영양 정보
+        3. 식단 선택 이유 간단히 설명
+
+        질문: {query}
+        """
     elif "레시피" in query:
-        prompt = Template(f"""
-        무조건 {pdf_file_path} 또는 {docx_file_path} 자료에서 레시피를 찾아서 자세히 설명해 줘.
-        """)
+        prompt = f"""
+        작업: 특정 요리의 레시피 설명
 
-    # 그 외의 경우 자유로운 응답 가능
+        참고 정보:
+        1. 레시피 출처: {docx_file_path} 파일
+
+        지침:
+        1. {query}의 레시피를 자세히 설명해 주세요.
+        2. 모든 링크는 제거해 주세요.
+        3. 해당 요리의 영양 정보를 포함해 주세요.
+
+
+        응답 형식:
+        1. 재료 목록
+        2. 조리 단계
+        3. 영양 정보
+        4. 조리 팁 (선택사항)
+
+        질문: {query}
+        """
     else:
-        prompt = Template(f"""
-        {pdf_file_path} 또는 {docx_file_path} 자료뿐만 아니라 추가적인 정보를 포함해서 자유롭게 답변해 줘.
-        """)
+        prompt = f"""
+        작업: 일반적인 식단 및 건강 관련 질문 답변
 
-    return prompt.substitute(query=query)
+        참고 정보:
+        1. 사용자 건강 정보: {pdf_content_str}
+        2. 추가 정보 출처: {docx_file_path} 파일
 
-    ''')
+        지침:
+        1. 제공된 정보를 바탕으로 질문에 자유롭게 답변해 주세요.
+        2. 모든 링크는 제거해 주세요.
+        3. 가능한 한 구체적이고 정확한 정보를 제공해 주세요.
 
+        응답 형식:
+        1. 질문에 대한 직접적인 답변
+        2. 추가 설명 또는 관련 정보 (필요시)
+        3. 주의사항 또는 권고사항 (적절한 경우)
+
+        질문: {query}
+        """
+    return prompt''')
 st.markdown("* * *")
 st.subheader("| 대화체인 호출")
 
