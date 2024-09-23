@@ -313,7 +313,7 @@ test_middle = pd.read_excel('test_middle.xlsx')
 st.dataframe(test_middle)
 
 st.markdown("* * *")
-st.subheader("RAGAS")
+st.subheader("RAGAS: Automated Evaluation of Retrieval Augmented Generation")
 st.code('''
 from ragas.metrics import (
     faithfulness,
