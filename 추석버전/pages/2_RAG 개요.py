@@ -44,7 +44,7 @@ def load_css(file_name):
 
 # CSS 파일 로드
 load_css(css_path)
-
+st.markdown("* * *")
 # RAG 설명 섹션
 st.markdown(
     """
