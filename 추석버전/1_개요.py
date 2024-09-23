@@ -47,10 +47,6 @@ load_css(css_path)
 st.markdown("* * *")
 col1, col2 = st.columns(2)
 
-# 기술 스택 표시
-with col1:
-
-
 # RAG 구축 설명 표시
 with col1:
     st.markdown(
