@@ -41,7 +41,7 @@ st.markdown("""
 
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
-image_path = os.path.join(current_dir, "images", "주차별메뉴.jpg", use_column_width=True)
+image_path = os.path.join(current_dir, "images", "주차별메뉴.jpg", )
 image_path2 = os.path.join(current_dir, "images", "벡터스토어.jpg")
 image_path3 = os.path.join(current_dir, "images", "임베딩.jpg")
 # 파일이 있는지 확인하고 이미지를 로드
