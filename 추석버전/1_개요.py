@@ -52,7 +52,7 @@ with col1:
 
 
 # RAG 구축 설명 표시
-with col2:
+with col1:
     st.markdown(
         """
         <h3 style='font-size: 30px; font-family: Pretendard;'>|RAG란?</h3>
@@ -84,7 +84,7 @@ with col2:
     )
     st.markdown("* * *")
 
-    col2:
+with col2:
 # 파일이 있는지 확인하고 이미지를 로드
     if os.path.exists(image_path):
         st.image(image_path4, caption="RAG system 흐름도.", use_column_width=True)
