@@ -130,6 +130,6 @@ image_path = os.path.join(current_dir, "images", "techstack.jpg")
 # 파일이 있는지 확인하고 이미지를 로드
 if os.path.exists(image_path):
     # width 파라미터를 사용하여 이미지 크기 조정
-    st.image(image_path, width=100)  # width 값을 적절히 조정하여 크기 설정
+    st.image(image_path, width=200)  # width 값을 적절히 조정하여 크기 설정
 
 st.markdown("* * *")
