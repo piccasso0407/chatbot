@@ -122,9 +122,9 @@ os.path.exists(image_path4):
 
 st.write('''저는 속도가 빠르고 편리한 lmstudio를 사용했습니다.''')
 
-원하는 모델을 다운로드 받습니다. 
+st.write('''원하는 모델을 다운로드 받습니다. 
 저는 teddylee777님이 올려주신 
-teddylee777/EEVE-Korean-Instruct-10.8B-v1.0-gguf 모델을 다운로드 받았습니다. 
+teddylee777/EEVE-Korean-Instruct-10.8B-v1.0-gguf 모델을 다운로드 받았습니다. ''')
 
 # 기술 스택 표시
 st.markdown(
