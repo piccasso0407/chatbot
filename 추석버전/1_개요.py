@@ -114,7 +114,7 @@ with col2:
         st.image(image_path3, caption="lmstudio.", use_column_width=True)
         st.markdown("[lmstudio 바로가기](https://lmstudio.ai/)")
 
-st.write('''저는 두 개를 비교해 보고 속도가 더 빠르고 편리했던 lmstudio를 사용했습니다.''')
+st.write('''저는 두 개를 모두 사용하면서 비교해 보았는데 속도가 더 빠르고 편리하게 느껴졌던 lmstudio를 최종 선택했습니다.''')
 
 st.markdown("* * *")
 
