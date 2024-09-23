@@ -45,35 +45,35 @@ def load_css(file_name):
 load_css(css_path)
 
 st.markdown("* * *")
-col1, col2= st.columns(2)
+col1, col2 = st.columns(2)
+
 # 기술 스택 표시
 with col1:
     st.markdown(
         """
         <h3 style='font-size: 30px; font-family: Pretendard;'>|tech stack</h3>
-        """, 
+        """,
         unsafe_allow_html=True
-        )
+    )
 
     current_dir = os.path.dirname(os.path.abspath(__file__))
     image_path = os.path.join(current_dir, "images", "techstack.jpg")
-    
+
     # 파일이 있는지 확인하고 이미지를 로드
     if os.path.exists(image_path):
         st.image(image_path)
-    
-    
+
     st.markdown("* * *")
 
-current_subheader = "|RAG 구축"
+# RAG 구축 설명 표시
 with col2:
-# 만드는 방법
-st.markdown(
-    """
-    <h3 style='font-size: 30px; font-family: Pretendard;'>|RAG란?</h3>
-    """, 
-    unsafe_allow_html=True
-)
+    st.markdown(
+        """
+        <h3 style='font-size: 30px; font-family: Pretendard;'>|RAG란?</h3>
+        """,
+        unsafe_allow_html=True
+    )
+
 st.write('''RAG(Retrieval-Augmented Generation:검색증강생성)는 대규모 언어 모델의 출력을 최적화하여 응답을 생성하기 전에
             학습 데이터 소스 외부의 신뢰할 수 있는 지식 베이스를 참조하도록 하는 프로세스입니다.''')
 
