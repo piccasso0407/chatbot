@@ -271,7 +271,7 @@ def get_conversation_chain(_vectorstore):
 # 대화형 체인 생성
 conversation_chain = get_conversation_chain(vectorstore)
 ''')
-st.subheader("|ragas에 필요한 내 llm 답변 출력")       
+st.subheader("|RAGAS에 필요한 내 llm 답변 출력")       
 st.code('''
 # 사용자 질의 처리 함수
 def process_user_query(query):
@@ -313,7 +313,7 @@ test_middle = pd.read_excel('test_middle.xlsx')
 st.dataframe(test_middle)
 
 st.markdown("* * *")
-st.subheader("ragas")
+st.subheader("RAGAS")
 st.code('''
 from ragas.metrics import (
     faithfulness,
