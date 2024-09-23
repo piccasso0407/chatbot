@@ -88,6 +88,24 @@ with col2:
         '''
     )
 
+st.subheader("|RAG의 장단점")
+col1, col2 = st.columns(2)
+with col1:
+    st.markdown("#### 장점")
+    st.write("""
+    - 최신 정보 반영 가능
+    - 특정 도메인 지식 활용 가능
+    - 환각(hallucination) 감소
+    - 모델 재학습 없이 지식 확장 가능
+    """)
+with col2:
+    st.markdown("#### 단점")
+    st.write("""
+    - 검색 품질에 따른 성능 의존성
+    - 추가적인 계산 비용
+    - 시스템 복잡도 증가
+    """)
+
 st.markdown("* * *")
 
 # 기본설정
