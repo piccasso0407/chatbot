@@ -179,8 +179,8 @@ st.write("""
 2. 임베딩 생성 및 벡터 데이터베이스 구축
 3. 질의응답 시스템 구현 및 성능테스트
 """)
-
-image_path = os.path.join(current_dir, "images", "techstack.jpg")
+st.markdown("* * *")
+image_path = os.path.join(current_dir, "images", "techstack.jpg", caption = "techstack")
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(current_dir, "images", "techstack.jpg")
