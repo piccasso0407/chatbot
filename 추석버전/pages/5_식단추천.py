@@ -152,7 +152,10 @@ def get_conversation_chain(_vectorstore):
         search_kwargs={"k": 10},
         verbose=False
     )
+    import dotenv
 
+    dotenv_file = dotenv.find_dotenv()
+    dotenv.load_dotenv(dotenv_file)
     # OpenAI API Key 설정
     openai.api_key = "dotenv_file"  # Replace with your OpenAI API key
 
