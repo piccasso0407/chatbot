@@ -140,24 +140,7 @@ st.markdown("* * *")
 st.subheader('| 벡터스토어')
 st.write("여러가지 벡터스토어")
 # 파일이 있는지 확인하고 이미지를 로드
-if os.path.exists(image_path2):
-    # 이미지 파일을 base64로 인코딩하여 HTML로 삽입
-    with open(image_path2, "rb") as img_file:
-        img_data = img_file.read()
-        img_base64 = base64.b64encode(img_data).decode()
-
-    # HTML을 사용하여 이미지 가운데 정렬
-    st.markdown(
-        f"""
-        <div style="display: flex; justify-content: center;">
-            <img src="data:image/jpeg;base64,{img_base64}" alt="Image" style="width: 300px;"/>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-else:
-    st.error(f"이미지 파일을 찾을 수 없습니다: {image_path2}")
-
+st.image(image_path2)
 
 st.write("faiss와 chroma의 차이")
 st.markdown("""
