@@ -119,7 +119,7 @@ st.markdown("* * *")
 col1, col2, col3 = st.columns(3)
 with col1:
     st.write('''저는 속도가 빠르고 편리한 lmstudio를 사용했습니다.''')
- with col2:
+with col2:
     image_path5 = os.path.join(current_dir, "images", "model.jpg")
     if os.path.exists(image_path5):
         st.image(image_path5, caption="여러가지 모델", use_column_width=True)
