@@ -44,7 +44,7 @@ a, b = st.columns([2, 7])
 with a:
     image_path = os.path.join(current_dir, "images", "hypre.jpg")
     if os.path.exists(image_path):
-    st.image(image_path, width=200)
+        st.image(image_path, width=200)
 with b:
     st.markdown('####')
     team_title = '<b style="color:#31333f; font-size: 30px;">Team 고혈압</b>'
