@@ -46,8 +46,6 @@ def load_css(file_name):
 load_css(css_path)
 # 첫 번째 화면은 항상 표시되도록 설정
 a, b = st.columns([2, 7])
-with a:
-    st.image(logo, width=400)
 
 with b:
     st.markdown('####')
