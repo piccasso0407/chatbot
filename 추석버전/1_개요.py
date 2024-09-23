@@ -45,10 +45,15 @@ def load_css(file_name):
 load_css(css_path)
 
 # 파일이 있는지 확인하고 이미지를 로드
+current_dir = os.path.dirname(os.path.abspath(__file__))
+image_path4 = os.path.join(current_dir, "images", "langchain.jpg")
+
+# 이미지가 있을 경우 표시
 if os.path.exists(image_path4):
     st.image(image_path4, caption="RAG system 흐름도.", use_column_width=True)
 
 st.markdown("* * *")
+
 col1, col2 = st.columns(2)
 
 # RAG 구축 설명 표시
@@ -60,7 +65,7 @@ with col1:
         unsafe_allow_html=True
     )
 
-    st.write('''RAG(Retrieval-Augmented Generation:검색증강생성)는 대규모 언어 모델의 출력을 최적화하여 응답을 생성하기 전에
+    st.write('''RAG(Retrieval-Augmented Generation: 검색증강생성)는 대규모 언어 모델의 출력을 최적화하여 응답을 생성하기 전에
                 학습 데이터 소스 외부의 신뢰할 수 있는 지식 베이스를 참조하도록 하는 프로세스입니다.''')
     
     st.write(
@@ -68,9 +73,7 @@ with col1:
         최신 정보 및 사용자가 원하는 도메인 정보를 반영하여 답변합니다. 아울러 참조할 수 있는 문서를 명확하게 지정해 주어
         답변의 부정확성이나 환각(hallucination)을 줄일 수 있습니다.'''
     )
-    
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    image_path4 = os.path.join(current_dir, "images", "langchain.jpg")
+
 with col2:
     st.write(
         '''
@@ -83,8 +86,8 @@ with col2:
         - 프롬프트를 LLM에 넣어 최종 답변을 생성합니다.
         '''
     )
-    st.markdown("* * *")
 
+st.markdown("* * *")
 
 
 # 기본설정
