@@ -87,7 +87,7 @@ with col2:
         - 프롬프트를 LLM에 넣어 최종 답변을 생성합니다.
         '''
     )
-
+st.markdown("* * *")
 st.subheader("|RAG의 장단점")
 col1, col2 = st.columns(2)
 with col1:
