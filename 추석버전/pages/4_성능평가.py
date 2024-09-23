@@ -315,6 +315,11 @@ st.dataframe(test_middle)
 
 st.markdown("* * *")
 st.subheader("RAGAS: Automated Evaluation of Retrieval Augmented Generation")
+
+st.markdown("#### Ragas Documentation")
+# 링크를 Markdown 형식으로 작성
+st.markdown("[Ragas Documentation](https://docs.ragas.io/en/stable/)")
+
 st.code('''
 from ragas.metrics import (
     faithfulness,
