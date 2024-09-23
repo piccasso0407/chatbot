@@ -180,7 +180,7 @@ st.write("""
 3. 질의응답 시스템 구현 및 성능테스트
 """)
 st.markdown("* * *")
-image_path = os.path.join(current_dir, "images", "techstack.jpg", caption = "techstack")
+image_path = os.path.join(current_dir, "images", "techstack.jpg")
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(current_dir, "images", "techstack.jpg")
