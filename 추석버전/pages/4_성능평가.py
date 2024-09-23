@@ -314,7 +314,7 @@ test_middle = pd.read_excel('test_middle.xlsx')
 st.dataframe(test_middle)
 
 st.markdown("* * *")
-st.subheader("RAGAS: Automated Evaluation of Retrieval Augmented Generation")
+st.subheader("|RAGAS: Automated Evaluation of Retrieval Augmented Generation")
 
 
 # 링크를 Markdown 형식으로 작성
@@ -392,8 +392,8 @@ image_path2 = os.path.join(current_dir, "images", "amnswerrelevancy.jpg")
 image_path3 = os.path.join(current_dir, "images", "contextrecall.jpg")
 image_path4 = os.path.join(current_dir, "images", "contextprecision.jpg")
 
-
-
+st.subheader("|RAGAS의 평가지표")
+st.markdown("* * *")
 st.image(image_path)
 st.image(image_path2)
 st.image(image_path3)
