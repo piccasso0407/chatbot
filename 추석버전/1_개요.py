@@ -44,11 +44,15 @@ def load_css(file_name):
 # CSS 파일 로드
 load_css(css_path)
 
+# 파일이 있는지 확인하고 이미지를 로드
+if os.path.exists(image_path4):
+    st.image(image_path4, caption="RAG system 흐름도.", use_column_width=True)
+
 st.markdown("* * *")
 col1, col2 = st.columns(2)
 
 # RAG 구축 설명 표시
-with col2:
+with col1:
     st.markdown(
         """
         <h3 style='font-size: 30px; font-family: Pretendard;'>|RAG란?</h3>
@@ -67,7 +71,7 @@ with col2:
     
     current_dir = os.path.dirname(os.path.abspath(__file__))
     image_path4 = os.path.join(current_dir, "images", "langchain.jpg")
-
+with col2:
     st.write(
         '''
         1. RAG 모델은 다음과 같이 동작합니다.
@@ -81,10 +85,6 @@ with col2:
     )
     st.markdown("* * *")
 
-with col1:
-    # 파일이 있는지 확인하고 이미지를 로드
-    if os.path.exists(image_path4):
-        st.image(image_path4, caption="RAG system 흐름도.", use_column_width=True)
 
 
 # 기본설정
