@@ -114,7 +114,7 @@ st.markdown(
     """
     <a href="https://pressureproject.streamlit.app" target="_blank" style="text-decoration: none;">
         <div style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; border-radius: 5px; text-align: center; font-weight: bold;">
-            스트림릿 바로가기
+            고혈압예측모델
         </div>
     </a>
     """,
