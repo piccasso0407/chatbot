@@ -70,7 +70,7 @@ st.markdown("""
         }
     </style>
     """, unsafe_allow_html=True)
-st.write("제 성능평가 페이지는 '판다스스튜디오' 유튜브 채널을 기반으로 만들었습니다.")
+st.write("제 성능평가 페이지는 유튜브 채널 '판다스스튜디오'를 기반으로 만들었습니다.")
 st.markdown('[판다스스튜디오 바로가기](https://youtu.be/jSd6pdydBNU?si=tfWItBCeWBfJ1vCe)')
 st.markdown("* * *")
 st.subheader("|QnA set")
