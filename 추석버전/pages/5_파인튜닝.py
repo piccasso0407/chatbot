@@ -111,7 +111,7 @@ model = FastLanguageModel.get_peft_model(
 )
 
 ''')
-st.image("images/lora.jpg")
+st.image(image_path)
 
 st.markdown("* * *")
 st.subheader("|데이터 준비")
