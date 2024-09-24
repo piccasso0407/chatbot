@@ -43,7 +43,7 @@ image_path5 = os.path.join(current_dir, "images", "gguf.jpg", )
 image_path6 = os.path.join(current_dir, "images", "tuning1.jpg", )
 image_path7 = os.path.join(current_dir, "images", "mymodel.jpg", )
 
-st.write("제 파인튜닝의 기본틀은 '필로소피 AI' 유튜브 채널을 참조했습니다.")
+st.write("제 파인튜닝 페이지는 '필로소피 AI' 유튜브 채널을 참조했습니다.")
 st.markdown('[필로소피AI 바로가기](https://youtu.be/QaOIcJDDDjo?si=oToxZutU-VzSGT5v)')
 
 st.markdown("* * *")
