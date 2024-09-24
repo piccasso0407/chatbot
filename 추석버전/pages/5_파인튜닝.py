@@ -41,7 +41,7 @@ image_path3 = os.path.join(current_dir, "images", "training.jpg", )
 image_path4 = os.path.join(current_dir, "images", "train.jpg", )
 image_path5 = os.path.join(current_dir, "images", "gguf.jpg", )
 image_path6 = os.path.join(current_dir, "images", "tuning1.jpg", )
-
+image_path7 = os.path.join(current_dir, "images", "mymodel.jpg", )
 
 st.write("제 파인튜닝의 기본틀은 '필로소피 AI' 유튜브 채널을 참조했습니다.")
 st.markdown('[필로소피AI 바로가기](https://youtu.be/QaOIcJDDDjo?si=oToxZutU-VzSGT5v)')
@@ -290,3 +290,6 @@ if True:
 st.image(image_path5)
 
 st.markdown("* * *")
+
+st.subheader("|결과")
+st.image(image_path7)
