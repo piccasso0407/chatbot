@@ -206,6 +206,7 @@ st.subheader("|모델 훈련")
 st.code('''trainer_stats = trainer.train()''')
 
 st.image(image_path4)
+st.write("60 에폭 결과: 0.661400")
 
 st.markdown("* * *")
 
