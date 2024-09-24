@@ -34,12 +34,7 @@ def load_css(file_name):
 # CSS 파일 로드
 load_css(css_path)
 st.markdown("* * *")
-# RAG 설명 섹션
-st.markdown(
-    """
-    <h3 style='font-size: 30px; font-family: Pretendard;'>|RAG란?</h3>
-    """,
-    unsafe_allow_html=True
+
 )
 
 st.write("제 파인튜닝의 기본틀은 '필로소피 AI' 유튜브 채널을 참조했습니다.")
