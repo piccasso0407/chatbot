@@ -35,7 +35,7 @@ def load_css(file_name):
 load_css(css_path)
 st.markdown("* * *")
 
-)
+
 
 st.write("제 파인튜닝의 기본틀은 '필로소피 AI' 유튜브 채널을 참조했습니다.")
 st.markdown('[필로소피AI 바로가기](https://youtu.be/QaOIcJDDDjo?si=oToxZutU-VzSGT5v)')
