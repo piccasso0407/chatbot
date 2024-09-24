@@ -16,6 +16,31 @@ from funcs import load_css
 import gc
 import pandas as pd
 
+# 페이지 설정: 화면을 가로로 넓게 사용
+st.set_page_config(layout="wide")
+
+from funcs import load_css, load_local_font
+current_dir = os.path.dirname(os.path.abspath(__file__))
+css_path = os.path.join(current_dir, 'style.css')
+
+# CSS 파일 로드 함수
+def load_css(file_name):
+    if os.path.exists(file_name):
+        with open(file_name, 'r', encoding='utf-8') as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    else:
+        st.error(f"CSS 파일을 찾을 수 없습니다: {file_name}")
+
+# CSS 파일 로드
+load_css(css_path)
+st.markdown("* * *")
+# RAG 설명 섹션
+st.markdown(
+    """
+    <h3 style='font-size: 30px; font-family: Pretendard;'>|RAG란?</h3>
+    """,
+    unsafe_allow_html=True
+)
 
 st.write("제 파인튜닝의 기본틀은 '필로소피 AI' 유튜브 채널을 참조했습니다.")
 st.markdown('[필로소피AI 바로가기](https://youtu.be/QaOIcJDDDjo?si=oToxZutU-VzSGT5v)')
