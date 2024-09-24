@@ -15,31 +15,7 @@ from langchain.prompts import ChatPromptTemplate
 from funcs import load_css
 import gc
 import pandas as pd
-st.set_page_config(layout="wide")
-# 페이지 로드
-current_dir = os.path.dirname(os.path.abspath(__file__))
-css_path = os.path.join(current_dir, 'style.css')
 
-# CSS 파일 로드 함수
-def load_css(file_name):
-    if os.path.exists(file_name):
-        with open(file_name, 'r', encoding='utf-8') as f:
-            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-    else:
-        st.error(f"CSS 파일을 찾을 수 없습니다: {file_name}")
-
-# CSS 파일 로드
-load_css(css_path)
-
-# Pretendard 폰트 로드
-st.markdown("""
-    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
-    <style>
-        html, body, [class*="css"] {
-            font-family: 'Pretendard', sans-serif;
-        }
-    </style>
-    """, unsafe_allow_html=True)
 
 st.write("제 파인튜닝의 기본틀은 '필로소피 AI' 유튜브 채널을 참조했습니다.")
 st.markdown(['필로소피AI 바로가기']('https://youtu.be/QaOIcJDDDjo?si=oToxZutU-VzSGT5v'))
@@ -207,3 +183,85 @@ st.image("images/train.jpg")
 
 st.markdown("* * *")
 
+st.subheader("|alpaca_prompt 정의")
+st.code('''
+alpaca_prompt = """아래는 작업을 설명하는 지시사항입니다. 입력된 내용을 바탕으로 적절한 응답을 작성하세요.
+### 지시사항:
+{instruction}
+### 입력:
+{input}
+### 응답:
+"""
+
+# FastLanguageModel 설정
+FastLanguageModel.for_inference(model)  # Enable native 2x faster inference
+
+# 입력 준비
+instruction = "식단을 추천해주는 영양전문가입니다."
+input_text = "고혈압 예방을 위한 저염식 레시피를 알려줘."  # 빈 문자열 대신 간단한 질문으로 대체
+
+# 토큰화
+inputs = tokenizer(
+    [
+        alpaca_prompt.format(
+            instruction=instruction,
+            input=input_text
+        )
+    ],
+    return_tensors="pt"
+).to("cuda")
+
+# TextStreamer 설정
+from transformers import TextStreamer
+text_streamer = TextStreamer(tokenizer)
+
+# 생성
+outputs = model.generate(
+    **inputs,
+    streamer=text_streamer,
+    max_new_tokens=500,
+    use_cache=True
+)
+
+# 생성된 텍스트 출력 (선택적)
+generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
+print("\n완성된 텍스트:")
+print(generated_text)''')
+
+st.image("images/tuning.jpg")
+
+st.markdown("* * *")
+st.subheader("|gguf로 저장")
+
+st.write('''GGUF / llama.cpp Conversion
+To save to GGUF / llama.cpp, we support it natively now! We clone llama.
+        cpp and we default save it to q8_0. We allow all methods like q4_k_m. 
+        Use save_pretrained_gguf for local saving and push_to_hub_gguf for uploading to HF.)''')
+
+st.code('''
+        # Save to 8bit Q8_0
+if False: model.save_pretrained_gguf("finalrecipes", tokenizer,)
+# Remember to go to https://huggingface.co/settings/tokens for a token!
+# And change hf to your username!
+if False: model.push_to_hub_gguf("junghwa28/finalrecipes", tokenizer, token = "")
+
+# Save to 16bit GGUF
+if False: model.save_pretrained_gguf("model", tokenizer, quantization_method = "f16")
+if False: model.push_to_hub_gguf("junghwa28/finalrecipes", tokenizer, quantization_method = "f16", token = "")
+
+# Save to q4_k_m GGUF
+if False: model.save_pretrained_gguf("model", tokenizer, quantization_method = "q4_k_m")
+if False: model.push_to_hub_gguf("junghwa28/finalrecipes", tokenizer, quantization_method = "q4_k_m", token = "")
+
+if True:
+    model.push_to_hub_gguf(
+        "junghwa28/finalrecipes", # Change hf to your username!
+        tokenizer,
+        quantization_method = "q8_0",
+        token = "hf_ID", # Get a token at https://huggingface.co/settings/tokens
+    ))''')
+
+st.image("images/gguf.jpg")
+
+st.markdown("* * *")
+st.markdown()
