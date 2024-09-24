@@ -36,6 +36,11 @@ load_css(css_path)
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(current_dir, "images", "lola.jpg", )
+image_path2 = os.path.join(current_dir, "images", "modelpre.jpg", )
+image_path3 = os.path.join(current_dir, "images", "training.jpg", )
+image_path4 = os.path.join(current_dir, "images", "train.jpg", )
+image_path5 = os.path.join(current_dir, "images", "gguf.jpg", )
+
 
 
 st.write("제 파인튜닝의 기본틀은 '필로소피 AI' 유튜브 채널을 참조했습니다.")
@@ -152,7 +157,7 @@ dataset = load_dataset("junghwa28/recipes", split="train")
 dataset = dataset.map(formatting_prompts_func, batched=True, remove_columns=dataset.column_names)
 ''')
 
-st.image("images/modelpre.jpg")
+st.image(image_path2)
 
 st.markdown("* * *")
 st.subheader("|모델 준비")
@@ -194,13 +199,13 @@ trainer = SFTTrainer(
 )''')
 
 
-st.image("images/training.jpg")
+st.image(image_path3)
 
 st.markdown("* * *")
 st.subheader("|모델 훈련")
 st.code('''trainer_stats = trainer.train()''')
 
-st.image("images/train.jpg")
+st.image(image_path4)
 
 st.markdown("* * *")
 
@@ -282,7 +287,7 @@ if True:
         token = "hf_ID", # Get a token at https://huggingface.co/settings/tokens
     ))''')
 
-st.image("images/gguf.jpg")
+st.image(image_path5)
 
 st.markdown("* * *")
 st.markdown()
