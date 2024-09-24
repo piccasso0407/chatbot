@@ -292,6 +292,6 @@ st.image(image_path5)
 st.markdown("* * *")
 
 st.subheader("|결과")
-st.markdown('[허깅페이스 바로가기]https://huggingface.co/junghwa28/finalrecipes')
+st.markdown('[허깅페이스 바로가기](https://huggingface.co/junghwa28/finalrecipes)')
 st.image(image_path7)
 
