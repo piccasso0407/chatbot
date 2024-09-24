@@ -48,7 +48,7 @@ image_path3 = os.path.join(current_dir, "images", "임베딩.jpg")
 # 파일이 있는지 확인하고 이미지를 로드
 
 
-st.write("제 RAG시스템 페이지는 유튜브 채널 '모두의 AI'에서 참조했습니다.") 
+st.write("제 RAG시스템 페이지는 유튜브 채널 '모두의 AI'를 기반으로 만들었습니다.") 
 st.markdown("[모두의 AI 채널 바로가기](https://youtu.be/xYNYNKJVa4E?si=VCFXPu9vXZIMbjhh)")
 st.markdown("* * *")
 st.subheader("| 파일 읽기")
