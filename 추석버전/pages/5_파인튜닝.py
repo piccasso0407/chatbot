@@ -290,4 +290,3 @@ if True:
 st.image(image_path5)
 
 st.markdown("* * *")
-st.markdown()
