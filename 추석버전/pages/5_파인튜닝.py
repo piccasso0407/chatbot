@@ -40,7 +40,7 @@ image_path2 = os.path.join(current_dir, "images", "modelpre.jpg", )
 image_path3 = os.path.join(current_dir, "images", "training.jpg", )
 image_path4 = os.path.join(current_dir, "images", "train.jpg", )
 image_path5 = os.path.join(current_dir, "images", "gguf.jpg", )
-image_path6 = os.path.join(current_dir, "images", "tuning.jpg", )
+image_path6 = os.path.join(current_dir, "images", "tuning1.jpg", )
 
 
 st.write("제 파인튜닝의 기본틀은 '필로소피 AI' 유튜브 채널을 참조했습니다.")
