@@ -40,7 +40,7 @@ image_path2 = os.path.join(current_dir, "images", "modelpre.jpg", )
 image_path3 = os.path.join(current_dir, "images", "training.jpg", )
 image_path4 = os.path.join(current_dir, "images", "train.jpg", )
 image_path5 = os.path.join(current_dir, "images", "gguf.jpg", )
-
+image_path6 = os.path.join(current_dir, "images", "tuning.jpg", )
 
 
 st.write("제 파인튜닝의 기본틀은 '필로소피 AI' 유튜브 채널을 참조했습니다.")
@@ -254,7 +254,7 @@ generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
 print("\n완성된 텍스트:")
 print(generated_text)''')
 
-st.image("images/tuning.jpg")
+st.image(image_path6)
 
 st.markdown("* * *")
 st.subheader("|gguf로 저장")
