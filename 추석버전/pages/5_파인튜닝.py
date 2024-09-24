@@ -18,7 +18,7 @@ import pandas as pd
 
 
 st.write("제 파인튜닝의 기본틀은 '필로소피 AI' 유튜브 채널을 참조했습니다.")
-st.markdown(['필로소피AI 바로가기']('https://youtu.be/QaOIcJDDDjo?si=oToxZutU-VzSGT5v'))
+st.markdown('[필로소피AI 바로가기](https://youtu.be/QaOIcJDDDjo?si=oToxZutU-VzSGT5v)')
 
 st.markdown("* * *")
 st.subheader("|unsloth 설치")
