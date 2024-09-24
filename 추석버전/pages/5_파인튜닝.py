@@ -15,7 +15,31 @@ from langchain.prompts import ChatPromptTemplate
 from funcs import load_css
 import gc
 import pandas as pd
+st.set_page_config(layout="wide")
+# 페이지 로드
+current_dir = os.path.dirname(os.path.abspath(__file__))
+css_path = os.path.join(current_dir, 'style.css')
 
+# CSS 파일 로드 함수
+def load_css(file_name):
+    if os.path.exists(file_name):
+        with open(file_name, 'r', encoding='utf-8') as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    else:
+        st.error(f"CSS 파일을 찾을 수 없습니다: {file_name}")
+
+# CSS 파일 로드
+load_css(css_path)
+
+# Pretendard 폰트 로드
+st.markdown("""
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <style>
+        html, body, [class*="css"] {
+            font-family: 'Pretendard', sans-serif;
+        }
+    </style>
+    """, unsafe_allow_html=True)
 
 st.write("제 파인튜닝의 기본틀은 '필로소피 AI' 유튜브 채널을 참조했습니다.")
 st.markdown(['필로소피AI 바로가기']('https://youtu.be/QaOIcJDDDjo?si=oToxZutU-VzSGT5v'))
