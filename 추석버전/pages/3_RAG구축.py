@@ -47,7 +47,7 @@ image_path2 = os.path.join(current_dir, "images", "벡터스토어.jpg")
 image_path3 = os.path.join(current_dir, "images", "임베딩.jpg")
 # 파일이 있는지 확인하고 이미지를 로드
 
-st.write("제 RAG시스템의 기본 틀은 유튜브 채널 모두의 AI에서 참조했습니다.") 
+st.subheader("제 RAG시스템의 기본 틀은 유튜브 채널 모두의 AI에서 참조했습니다.") 
 st.markdown("[모두의 AI 채널 바로가기](https://youtu.be/xYNYNKJVa4E?si=VCFXPu9vXZIMbjhh)")
 st.markdown("* * *")
 st.subheader("| 파일 읽기")
