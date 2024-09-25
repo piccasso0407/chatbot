@@ -82,6 +82,7 @@ with a:
             ''')
 with b:
    st.markdown('### |신상길')
+   st.markdown("tkdrlfdk920@gmail.com")
    st.markdown('##### 데이터 초기 이해와 분석과 데이터를 크롤링 및 검색')
    st.write(''' 
             다양한 피처 엔지니어링 방법을 공부하였고, 국민 건강 영양조사 데이터와 저희 팀의 방향성에 맞는 
