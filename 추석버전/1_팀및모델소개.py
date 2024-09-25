@@ -103,6 +103,7 @@ with c:
             ''')
 with d:
    st.markdown('### |정다운')
+   st.markdown("jdu1941@gmail.com")
    st.markdown('##### 데이터 시각화와 논리적 통계 담당')
    st.write(''' 
             다양한 시각화를 통해 고혈압과 관련된 요인들을 찾아내고, 고혈압과 관련된 논문들을 읽어보고 
