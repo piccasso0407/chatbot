@@ -71,6 +71,7 @@ st.title('팀원소개')
 a, b, c, d = st.columns([2, 2, 2, 2])
 with a:
    st.markdown('### |김현빈')
+    st.markdown("[hb000122@gmail.com])
    st.markdown('##### 프로젝트를 설계하는 데 있어,모든 작업 진행')
    st.write(''' 
             모델에 필요한 데이터를 다시 분석하기도 하고 다양한 모델 그리고 기법들을 활용하여 
