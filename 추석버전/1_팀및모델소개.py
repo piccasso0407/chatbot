@@ -91,6 +91,7 @@ with b:
             ''')
 with c:
    st.markdown('### |이정화')
+   st.markdown("happychristmas1995@gmail.com")
    st.markdown('##### 데이터 전처리와 및 모델링과 챗봇 구현 ')
    st.write('''
             전처리 과정에서 컬럼 선택과 모델링에 적극적으로 참여하였습니다. 
