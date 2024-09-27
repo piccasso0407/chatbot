@@ -22,6 +22,34 @@ from langchain.memory import ConversationBufferMemory
 import streamlit as st
 import os
 
+
+st.set_page_config(layout="wide")
+# 페이지 로드
+current_dir = os.path.dirname(os.path.abspath(__file__))
+css_path = os.path.join(current_dir, 'style.css')
+
+# CSS 파일 로드 함수
+def load_css(file_name):
+    if os.path.exists(file_name):
+        with open(file_name, 'r', encoding='utf-8') as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    else:
+        st.error(f"CSS 파일을 찾을 수 없습니다: {file_name}")
+
+# CSS 파일 로드
+load_css(css_path)
+
+# Pretendard 폰트 로드
+st.markdown("""
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <style>
+        html, body, [class*="css"] {
+            font-family: 'Pretendard', sans-serif;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
+
 # 현재 스크립트의 절대 경로를 얻습니다
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
