@@ -18,7 +18,7 @@ import pandas as pd
 import requests
 import json
 from langchain.memory import ConversationBufferMemory
-
+import PyPDF2
 import streamlit as st
 import os
 
