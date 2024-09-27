@@ -47,6 +47,8 @@ st.write("제 파인튜닝 페이지는 유튜브 채널 '필로소피 AI'를 �
 st.markdown('[필로소피AI 바로가기](https://youtu.be/QaOIcJDDDjo?si=oToxZutU-VzSGT5v)')
 
 st.markdown("* * *")
+
+st.markdown('[unsloth](https://unsloth.ai/)')
 st.subheader("|unsloth 설치")
 st.markdown("unsloth 설치 코드는 아래와 같습니다. 리눅스 환경에서 실행해야 합니다.")
 st.code('''
