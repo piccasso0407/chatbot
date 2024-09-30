@@ -1,23 +1,12 @@
 import streamlit as st
 import os
-import time
-import pandas as pd
-import requests
-from PyPDF2 import PdfReader
-import docx
-from langchain.document_loaders import PyPDFLoader, Docx2txtLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
-from langchain.memory import ConversationBufferMemory
-from langchain.schema import Document
 
 st.set_page_config(layout="wide")
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 css_path = os.path.join(current_dir, 'style.css')
 
-# **CSS 파일 로드 함수**
+# CSS 파일 로드 함수
 def load_css(file_name):
     if os.path.exists(file_name):
         with open(file_name, 'r', encoding='utf-8') as f:
@@ -25,10 +14,10 @@ def load_css(file_name):
     else:
         st.error(f"CSS 파일을 찾을 수 없습니다: {file_name}")
 
-# **CSS 파일 로드**
+# CSS 파일 로드
 load_css(css_path)
 
-# **Pretendard 폰트 로드**
+# Pretendard 폰트 로드
 st.markdown("""
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
     <style>
@@ -38,15 +27,26 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# **여기까지 CSS 관련 코드입니다.**
-
-# **익스펜더 안에 나머지 코드를 넣습니다.**
-with st.expander("저염식 식단 챗봇"):
-
-    # **Streamlit 앱의 제목**
+# 익스펜더 안에 코드 표시
+with st.expander("코드 보기"):
+    code = '''
+    # Streamlit 앱의 제목
     st.title("저염식 식단 챗봇")
 
-    # **PDF 파일 읽기 함수**
+    # 필요한 라이브러리 임포트
+    import time
+    import pandas as pd
+    import requests
+    from PyPDF2 import PdfReader
+    import docx
+    from langchain.document_loaders import PyPDFLoader, Docx2txtLoader
+    from langchain.text_splitter import RecursiveCharacterTextSplitter
+    from langchain.embeddings import HuggingFaceEmbeddings
+    from langchain.vectorstores import FAISS
+    from langchain.memory import ConversationBufferMemory
+    from langchain.schema import Document
+
+    # PDF 파일 읽기 함수
     def read_pdf(file_path):
         pdf_text = []
         with open(file_path, 'rb') as file:
@@ -56,23 +56,23 @@ with st.expander("저염식 식단 챗봇"):
                 pdf_text.append(page.extract_text())
         return pdf_text
 
-    # **DOCX 파일 읽기 함수**
+    # DOCX 파일 읽기 함수
     def read_docx(file_path):
         doc = docx.Document(file_path)
         full_text = []
         for para in doc.paragraphs:
             full_text.append(para.text)
-        return '\n'.join(full_text)
+        return '\\n'.join(full_text)
 
-    # **파일 경로**
+    # 파일 경로
     docx_file_path = "./data/recipes.docx"
     pdf_file_path2 = "./1.pdf"
 
-    # **PDF 및 DOCX 파일에서 텍스트 불러오기**
+    # PDF 및 DOCX 파일에서 텍스트 불러오기
     docx_content = read_docx(docx_file_path)
     pdf_content2 = read_pdf(pdf_file_path2)
 
-    # **데이터를 딕셔너리 형태로 정리**
+    # 데이터를 딕셔너리 형태로 정리
     data = {
         "항목": [
             "이름", "만나이", "성별", "키", "체중", "허리둘레",
@@ -92,32 +92,28 @@ with st.expander("저염식 식단 챗봇"):
         ]
     }
 
-    # **데이터프레임 생성**
+    # 데이터프레임 생성
     df = pd.DataFrame(data)
     df1 = df.reset_index(drop=True)
 
-    # **사이드바에 데이터프레임 표시**
+    # 사이드바에 데이터프레임 표시
     st.sidebar.title("김첨지님의 건강 보고서")
     st.sidebar.dataframe(df1)
 
-    # **clear_all 함수 정의**
+    # clear_all 함수 정의
     def clear_all():
-        # **모든 캐시 지우기**
+        # 모든 캐시 지우기
         st.cache_data.clear()
         st.cache_resource.clear()
 
-        # **세션 상태 초기화**
+        # 세션 상태 초기화
         for key in list(st.session_state.keys()):
             del st.session_state[key]
 
-        # **가비지 컬렉션 실행**
-        # import gc  # 필요 시 활성화
-        # gc.collect()
-
         st.success("모든 캐시와 저장된 상태가 초기화되었습니다!")
-        st.experimental_rerun()  # **페이지 새로고침**
+        st.experimental_rerun()  # 페이지 새로고침
 
-    # **초기화 버튼을 사이드바로 이동**
+    # 초기화 버튼을 사이드바로 이동
     custom_css = """
     <style>
         .stButton>button {
@@ -132,49 +128,49 @@ with st.expander("저염식 식단 챗봇"):
     </style>
     """
 
-    # **커스텀 CSS 적용**
+    # 커스텀 CSS 적용
     st.sidebar.markdown(custom_css, unsafe_allow_html=True)
 
-    # **초기화 버튼을 사이드바로 이동**
+    # 초기화 버튼을 사이드바로 이동
     if st.sidebar.button('모든 데이터 초기화'):
         clear_all()
 
     documents = []
 
-    # **docx_content는 하나의 문자열이므로 바로 추가**
+    # docx_content는 하나의 문자열이므로 바로 추가
     if isinstance(docx_content, str):
         documents.append(Document(page_content=docx_content))
     else:
         st.error("DOCX 내용이 올바른 문자열 형식이 아닙니다.")
 
-    # **pdf_content2도 리스트일 가능성이 있으므로 개별 텍스트로 변환**
+    # pdf_content2도 리스트일 가능성이 있으므로 개별 텍스트로 변환
     for text in pdf_content2:
         if isinstance(text, str):
             documents.append(Document(page_content=text))
         else:
             st.error("두 번째 PDF 내용이 올바른 문자열 형식이 아닙니다.")
 
-    # **텍스트를 청크로 분리하는 함수**
+    # 텍스트를 청크로 분리하는 함수
     def get_text_chunks(documents):
         text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=700,  # **청크 크기를 더 줄임**
+            chunk_size=700,
             chunk_overlap=100,
             length_function=len
         )
         chunks = text_splitter.split_documents(documents)
         return chunks
 
-    # **벡터 스토어 생성 함수**
+    # 벡터 스토어 생성 함수
     def get_vectorstore(_text_chunks):
         embeddings = HuggingFaceEmbeddings(
             model_name="jhgan/ko-sroberta-multitask",
-            model_kwargs={'device': 'cpu'},  # **GPU 사용이 어렵다면 'cpu'로 변경**
+            model_kwargs={'device': 'cpu'},
             encode_kwargs={'normalize_embeddings': True}
         )
         vectordb = FAISS.from_documents(_text_chunks, embeddings)
         return vectordb
 
-    # **시스템 프롬프트 템플릿 생성**
+    # 시스템 프롬프트 템플릿 생성
     def get_system_message(user_info):
         system_message = f"""
     당신은 건강 전문가입니다. 사용자의 건강 정보를 바탕으로 맞춤형 식단과 건강 조언을 제공하는 역할을 합니다.
@@ -227,22 +223,22 @@ with st.expander("저염식 식단 챗봇"):
 
     system_message = get_system_message(user_info)
 
-    # **텍스트 청크 생성**
+    # 텍스트 청크 생성
     text_chunks = get_text_chunks(documents)
 
-    # **벡터 스토어 생성**
+    # 벡터 스토어 생성
     vectorstore = get_vectorstore(text_chunks)
     LMSTUDIO_URL = "http://localhost:1234/v1/chat/completions"
 
-    # **메모리 초기화**
+    # 메모리 초기화
     memory = ConversationBufferMemory(return_messages=True)
 
-    # **요청 보내기**
+    # 요청 보내기
     def chat_with_bot(question, vector_store):
         retriever = vector_store.as_retriever(search_kwargs={"k": 7})
         docs = retriever.get_relevant_documents(question)
 
-        context = "\n\n".join([doc.page_content for doc in docs])
+        context = "\\n\\n".join([doc.page_content for doc in docs])
 
         prompt = get_prompt_template(question, context)
 
@@ -267,11 +263,11 @@ with st.expander("저염식 식단 챗봇"):
         else:
             return f"오류 발생: {response.status_code}", []
 
-    # **대화형 체인 생성**
+    # 대화형 체인 생성
     def get_conversation_chain(vectorstore):
         return lambda x: chat_with_bot(x["question"], vectorstore)
 
-    # **대화형 체인 생성**
+    # 대화형 체인 생성
     conversation_chain = get_conversation_chain(vectorstore)
 
     if 'conversation' not in st.session_state:
@@ -312,7 +308,7 @@ with st.expander("저염식 식단 챗봇"):
     3. 주의사항 또는 권고사항 (적절한 경우)
     """
 
-    # **채팅 로직**
+    # 채팅 로직
     if 'messages' not in st.session_state:
         st.session_state['messages'] = []
 
@@ -329,7 +325,7 @@ with st.expander("저염식 식단 챗봇"):
                 else:
                     st.session_state['messages'].append({"role": "assistant", "content": response})
 
-                    # **채팅 메시지 표시**
+                    # 채팅 메시지 표시
                     for message in st.session_state['messages']:
                         if message['role'] == 'user':
                             st.chat_message("user").markdown(message['content'])
@@ -343,3 +339,5 @@ with st.expander("저염식 식단 챗봇"):
             except Exception as e:
                 st.error(f"오류가 발생했습니다: {str(e)}")
                 st.error(f"프롬프트: {query}")
+    '''
+    st.code(code, language='python')
