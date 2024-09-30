@@ -341,7 +341,11 @@ with st.expander("코드 보기"):
                 st.error(f"프롬프트: {query}")
     '''
     st.code(code, language='python')
-
+current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path2 = os.path.join(current_dir, "images", "thinking.jpg")
 image_path3 = os.path.join(current_dir, "images", "answer.jpg")
 image_path4 = os.path.join(current_dir, "images", "chamgo.jpg")
+
+st.image(image_path2)
+st.image(image_path3)
+st.image(image_path4)
