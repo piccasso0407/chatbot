@@ -102,17 +102,3 @@ img {
 .object-key-val {
     background-color: rgb(255, 241, 219);
 }
-
-st.markdown("""
-    <style>
-    .github-link {
-        position: fixed;
-        top: 15px;
-        right: 15px;
-        z-index: 9999;
-    }
-    </style>
-    <a href="https://github.com/piccasso0407/chatbot/edit/main/%EC%B6%94%EC%84%9D%EB%B2%84%EC%A0%84/" target="_blank" class="github-link">
-        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="35" height="35">
-    </a>
-    """, unsafe_allow_html=True)
