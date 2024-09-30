@@ -352,7 +352,7 @@ st.image(image_path4)
 
 
 # 비디오 파일의 절대경로를 지정합니다.
-video_file = os.path.join(current_dir, "images", "bandicam 2024-09-27 08-50-24-796.mp4")  # 실제 경로로 변경하세요.
+video_file = os.path.join(current_dir, "images", "bandicam 2024-09-30 15-39-46-483.mp4")  # 실제 경로로 변경하세요.
 
 # 비디오 파일이 존재하는지 확인합니다.
 if os.path.exists(video_file):
