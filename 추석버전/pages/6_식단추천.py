@@ -1,6 +1,5 @@
 import streamlit as st
 import PyPDF2
-from string import Template
 import re
 import os
 import time
