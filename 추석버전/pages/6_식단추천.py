@@ -341,3 +341,7 @@ with st.expander("코드 보기"):
                 st.error(f"프롬프트: {query}")
     '''
     st.code(code, language='python')
+
+st.image("thinking")
+st.image("answer")
+st.image("chamgo")
