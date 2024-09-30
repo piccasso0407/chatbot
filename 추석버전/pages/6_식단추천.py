@@ -25,7 +25,7 @@ load_css('./style.css')
 # Streamlit 앱의 제목
 st.title("저염식 식단 챗봇")
 
-# PDF 파일 읽기 함수
+st.code('''# PDF 파일 읽기 함수
 def read_pdf(file_path):
     pdf_text = []
     with open(file_path, 'rb') as file:
@@ -344,4 +344,4 @@ if query := st.chat_input("식단 또는 레시피를 물어보세요."):
                             st.markdown(doc.metadata.get('source', ''), help=doc.page_content)
             except Exception as e:
                 st.error(f"오류가 발생했습니다: {str(e)}")
-                st.error(f"프롬프트: {query}")
+                st.error(f"프롬프트: {query}")''')
