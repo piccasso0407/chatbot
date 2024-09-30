@@ -71,7 +71,7 @@ st.title('팀원소개')
 a, b, c, d = st.columns([2, 2, 2, 2])
 with a:
    st.markdown('### |김현빈')
-   st.markdown("hb000122@gmail.com")
+   st.write("hb000122@gmail.com")
    st.markdown('##### 프로젝트를 설계하는 데 있어,모든 작업 진행')
    st.write(''' 
             모델에 필요한 데이터를 다시 분석하기도 하고 다양한 모델 그리고 기법들을 활용하여 
@@ -82,7 +82,7 @@ with a:
             ''')
 with b:
    st.markdown('### |신상길')
-   st.markdown("tkdrlfdk920@gmail.com")
+   st.write("tkdrlfdk920@gmail.com")
    st.markdown('##### 데이터 초기 이해와 분석과 데이터를 크롤링 및 검색')
    st.write(''' 
             다양한 피처 엔지니어링 방법을 공부하였고, 국민 건강 영양조사 데이터와 저희 팀의 방향성에 맞는 
@@ -92,7 +92,7 @@ with b:
             ''')
 with c:
    st.markdown('### |이정화')
-   st.markdown("happychristmas1995@gmail.com")
+   st.write("happychristmas1995@gmail.com")
    st.markdown('##### 데이터 전처리와 및 모델링과 챗봇 구현 ')
    st.write('''
             전처리 과정에서 컬럼 선택과 모델링에 적극적으로 참여하였습니다. 
@@ -103,7 +103,7 @@ with c:
             ''')
 with d:
    st.markdown('### |정다운')
-   st.markdown("jdu1941@gmail.com")
+   st.write("jdu1941@gmail.com")
    st.markdown('##### 데이터 시각화와 논리적 통계 담당')
    st.write(''' 
             다양한 시각화를 통해 고혈압과 관련된 요인들을 찾아내고, 고혈압과 관련된 논문들을 읽어보고 
