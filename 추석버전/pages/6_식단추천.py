@@ -1,7 +1,5 @@
 import streamlit as st
 import PyPDF2
-import os
-import time
 from funcs import load_css
 import gc
 import pandas as pd
