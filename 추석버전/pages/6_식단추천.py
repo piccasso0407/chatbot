@@ -342,6 +342,6 @@ with st.expander("코드 보기"):
     '''
     st.code(code, language='python')
 
-st.image("thinking")
-st.image("answer")
-st.image("chamgo")
+image_path2 = os.path.join(current_dir, "images", "thinking.jpg")
+image_path3 = os.path.join(current_dir, "images", "answer.jpg")
+image_path4 = os.path.join(current_dir, "images", "chamgo.jpg")
