@@ -1,10 +1,4 @@
-import streamlit as st
-import PyPDF2
-from funcs import load_css
-import gc
-import pandas as pd
-import requests
-import json
+
 # 페이지 로드
 load_css('./style.css')
 
