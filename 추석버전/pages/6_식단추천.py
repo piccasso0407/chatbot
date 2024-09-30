@@ -1,6 +1,5 @@
 import streamlit as st
 import PyPDF2
-import docx  # For reading DOCX files
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import FAISS
