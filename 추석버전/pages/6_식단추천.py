@@ -1,23 +1,14 @@
 import streamlit as st
 import PyPDF2
-# from langchain.text_splitter import RecursiveCharacterTextSplitter
-# from langchain.embeddings import HuggingFaceEmbeddings
-# from langchain.vectorstores import FAISS
-# from langchain.chains import ConversationalRetrievalChain
-# from langchain_openai import ChatOpenAI
-# from langchain.schema import Document
 from string import Template
 import re
 import os
 import time
-# from langchain.prompts import ChatPromptTemplate
 from funcs import load_css
 import gc
 import pandas as pd
 import requests
 import json
-# from langchain.memory import ConversationBufferMemory
-# from langchain.chains import ConversationalRetrievalChain
 # 페이지 로드
 load_css('./style.css')
 
