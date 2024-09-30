@@ -249,4 +249,94 @@ def chat_with_bot(question, vector_store):
             {"role": "system", "content": system_message},
             {"role": "user", "content": prompt}
         ],
-        "model": "teddylee777/EEVE-Korean-Instruct-10.8B-v1.0-gguf/EEVE-Korean-Instruct-
+        "model": "teddylee777/EEVE-Korean-Instruct-10.8B-v1.0-gguf/EEVE-Korean-Instruct-10.8B-v1.0-Q5_K_M.gguf",
+        "temperature": 0.3
+    }
+    response = requests.post(LMSTUDIO_URL, headers=headers, json=data)
+    
+    if response.status_code == 200:
+        bot_response = response.json()['choices'][0]['message']['content']
+        
+        memory.chat_memory.add_user_message(question)
+        memory.chat_memory.add_ai_message(bot_response)
+        
+        return bot_response, docs
+    else:
+        return f"오류 발생: {response.status_code}", []
+
+# 대화형 체인 생성
+def get_conversation_chain(vectorstore):
+    return lambda x: chat_with_bot(x["question"], vectorstore)
+
+# 대화형 체인 생성
+conversation_chain = get_conversation_chain(vectorstore)
+
+if 'conversation' not in st.session_state:
+    st.session_state.conversation = conversation_chain
+
+def get_prompt_template(query, data):
+    base_prompt = f"""
+참고 정보:
+{data}
+
+질문: {query}
+
+지침:
+- 제공된 정보를 바탕으로 질문에 정확하고 구체적으로 답변해 주세요.
+- 모든 링크는 제거해 주세요.
+- 나트륨 함량이 500mg 이하인 음식만 추천.
+"""
+
+    if "식단" in query:
+        return base_prompt + """
+응답 형식:
+1. 추천 식단 (아침, 점심, 저녁)
+2. 각 식단의 영양 정보
+3. 식단 선택 이유 간단히 설명
+"""
+    elif "레시피" in query:
+        return base_prompt + """
+응답 형식:
+1. 재료 목록
+2. 조리 단계
+3. 영양 정보
+"""
+    else:
+        return base_prompt + """
+응답 형식:
+1. 질문에 대한 직접적인 답변
+2. 추가 설명 또는 관련 정보 (필요시)
+3. 주의사항 또는 권고사항 (적절한 경우)
+"""
+
+# Chat logic
+if 'messages' not in st.session_state:
+    st.session_state['messages'] = []
+
+query = st.chat_input("식단 또는 레시피를 물어보세요.")
+if query:
+    st.session_state['messages'].append({"role": "user", "content": query})
+    with st.spinner("Thinking..."):
+        try:
+            chain = st.session_state.conversation
+            response, source_documents = chain({"question": query})
+            
+            if not response:
+                st.error("응답을 받지 못했습니다. 다시 시도해 주세요.")
+            else:
+                st.session_state['messages'].append({"role": "assistant", "content": response})
+                
+                # 채팅 메시지 표시
+                for message in st.session_state['messages']:
+                    if message['role'] == 'user':
+                        st.chat_message("user").markdown(message['content'])
+                    else:
+                        st.chat_message("assistant").markdown(message['content'])
+                
+                if source_documents:
+                    with st.expander("참고 문서 확인"):
+                        for doc in source_documents:
+                            st.markdown(doc.metadata.get('source', ''), help=doc.page_content)
+        except Exception as e:
+            st.error(f"오류가 발생했습니다: {str(e)}")
+            st.error(f"프롬프트: {query}")
