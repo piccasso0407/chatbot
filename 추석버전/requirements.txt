@@ -10,7 +10,8 @@ python-docx
 # LangChain 관련 패키지
 langchain  # LangChain의 주요 패키지
 langchain-openai  # OpenAI 관련 모듈 포함
-langchain-community  # 커뮤니티 기반 추가 기능
+langchain-community
+langchain_core # 커뮤니티 기반 추가 기능
 
 # FAISS: 벡터 스토어를 위한 라이브러리
 faiss-cpu  # CPU 버전, GPU를 사용하지 않는 경우
